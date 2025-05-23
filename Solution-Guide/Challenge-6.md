@@ -67,7 +67,7 @@ In this task, you will test the chatbot locally before you publish the chatbot.
    ```
     - To locate the values for **AZURE_OPENAI_ENDPOINT** and **AZURE_OPENAI_API_KEY**, in the Azure portal, select the Azure OpenAI resource you created. In the **Resource Management** section, select **Keys and Endpoints (1)**. Use the **Endpoint** URL for AZURE_OPENAI_ENDPOINT **(2)** and the **key 1** value for AZURE_OPENAI_API_KEY **(3)**.
 
-      ![](../media/h223.png)  
+      ![](../media/c7.task1.1.png)  
 
     - To locate the values for **AZURE_AI_SEARCH_ENDPOINT**, **AZURE_AI_SEARCH_INDEX**, and **AZURE_AI_SEARCH_API_KEY**, in the Azure portal, select the Search Service instance you created. On the Overview page, use the **URL** for AZURE_AI_SEARCH_ENDPOINT.    
 
@@ -80,6 +80,11 @@ In this task, you will test the chatbot locally before you publish the chatbot.
     - In the left navigation pane, in the Settings section, select **Keys (1)**. Use the **Primary admin key** for AZURE_AI_SEARCH_API_KEY **(2)**.                  
 
       ![](../media/h226.png)   
+    
+    - To locate the value for **PGHOST**, navigate to PostgreSQL, and use the **Endpoint** for **PGHOST.**
+
+      ![](../media/c7.task1.2.png) 
+      ![](../media/c7.task1.3.png) 
 
     - PGPORT=**5432**
     - PGUSER=**promptflow**
@@ -147,6 +152,10 @@ In this task, you will test the chatbot locally before you publish the chatbot.
 
    ![](../media/h235.png)  
 
+   >**Note:** If the bot prompts with "Could you please confirm if we should use the getroomsusagewithintimespan function for this query", enter **yes**. 
+
+1. Now, to exit the chat terminal, press **Ctrl + C**.
+
 1. If you encounter this error, **Error: “pf.flow.test failed with UserErrorException: TypeError: Execution failure in ‘chat_with_data’**.
 
     - The installed **OpenAI** Python package may be incompatible with the script and throw the error shown. 
@@ -165,16 +174,16 @@ In this task, you will prepare the flow for deployment and deploy the flow. You 
 
 1. Navigate back to Visual Studio Code.
 
-1. Run the following command to get the name of the **Container Registry instance** that you have created in *Challenge 2 Task 3*.
+1. Run the following command to get the name of the **Container Registry instance** that you have created in *Challenge 3 Task 3*.
 
    ```
    az acr list --query "[].{Name:name}" --output table
    ```
 
-1. Enter the following command and press **Enter**. Update the following variable; replace *ACR_NAME_FROM_CHALLENGE02_TASK03* with the name of the instance that you recorded in Challenge 02 Task 03. The one that you got in the above command.   
+1. Enter the following command and press **Enter**. Update the following variable; replace *ACR_NAME_FROM_CHALLENGE03_TASK03* with the name of the instance that you recorded in Challenge 03 Task 03. The one that you got in the above command.   
 
    ```
-   $ACR_NAME="ACR_NAME_FROM_CHALLENGE2_TASK03"
+   $ACR_NAME="ACR_NAME_FROM_CHALLENGE3_TASK03"
    ```
 
    ![](../media/h237.png)  
@@ -205,7 +214,7 @@ In this task, you will prepare the flow for deployment and deploy the flow. You 
 
        >**Note:** You can find the **Password** on the Lab VM's **Environment** page.   
 
-    - If prompted, on the **Stay signed in to all your apps** page, select **No sign in to this app only.**
+    - If prompted, on the **Automatically sign in to all desktop apps and websites on this device?** page, select **No, this app only.**
 
 1. Navigate to Visual Studio Code, press **Enter** to **select a subscription and tenant**.      
 
@@ -318,6 +327,8 @@ In this task, you will prepare the flow for deployment and deploy the flow. You 
 1. Enter the query `How many free rooms do hotels in Switzerland have grouped by hotel on 2024-10-10?` in the question box and then **send**. You can see the results.    
 
    ![](../media/h247.png)  
+
+   >**Note:** If the bot responds with **"Could you please confirm the date for which you want to check the availability of free rooms?"**, please provide a future date in the format **dd-mm-yyyy**, and press Enter to see the results.
 
 1. Open a new web browser window and go to the URL for the frontend container. You recorded the Frontend_URL in Challenge 03, Task 03, Step 14. This will allow you to display the chatbot from within the updated Contoso Hotel app. Click on the **Calendar** icon.  
 
