@@ -128,7 +128,7 @@ Azure OpenAI provides a web-based portal named Azure OpenAI Studio that you can 
 
     ![](../media/c1.task2.4.png)
 
-1. On the **Deploy model GPT-4o,** enter the following details:
+1. On the **Deploy gpt-4o,** enter the following details:
 
     - Deployment name: **gpt-4o (1)**
     - Deployment type: **Standard (2)**
