@@ -25,7 +25,9 @@ Click on the **Login** button in the top-right corner to create a new account. E
 
    ![build.nvidia.com](../media/nvaie-1.png)
 
-   >**Note**: We recommend using your Email to log in, as this will provide you with 1,000 free credits. Alternatively, you can use the Username and Password available in the Environment tab to create an account. However, this option does not include free credits.
+   >**Note**: We recommend using your Email to log in, as this will provide you with 1,000 free credits. Alternatively, you can use the Username and Password available in the Environment tab to create an account. However, this option does not include free credits. 
+
+   
 
 1. **Create Your NVIDIA Account**:
 You will be redirected to a page where you can create your NVIDIA account. Provide your **Personal email address** **(1)** and then click on **Create (2)**.This account is required to download RIVA and start using it in your Azure platform.
@@ -63,7 +65,25 @@ In the next step, create your NGC account by providing your NVIDIA cloud account
 
 ### Success!
 
-You have successfully created your NVIDIA NVAIE and NVIDIA Cloud accounts. Verify that you are provided with 40 requests per minute (RPM) to try out RIVA.
+You have successfully created your NVIDIA NVAIE and NVIDIA Cloud accounts. 
+
+#### Verify Your Account to Get API Access
+
+To enable API access, you need to verify your account by following these steps:
+
+1. In the top right corner of the page, locate and click on the **Verify** option.
+
+   ![](../media/c2.task1.0.png)
+
+1. Type in your **Phone number (1)** and click on **Send Code via SMS (2)**
+
+   ![](../media/c2.task1.0.1.png)
+
+1. Once you receive the code on your phone, enter it in the **Provided field (1)** and click on **Verify(2)**
+
+   ![](../media/c2.task1.01.png)
+
+Now Verify that you are provided with 40 requests per minute (RPM) to try out RIVA.
 
    ![](../Scenario/Hackathon/media/nvaie-7-1.png)
 
@@ -180,7 +200,7 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
         - In the **MarketPlace**, search **NVIDIA GPU-Optimized VMI** **(1),** and in the **NVIDIA GPU-Optimized VMI,** click on **Select** **(2)** drop-down, and select **NVIDIA GPU-Optimized VMI - v24.10.1 - x64 Gen 2** **(3)** .
 
-            ![](../media/vmimageselect.png)
+            ![](../media/c2.task2.1.png)
 
     - **Size**: Click on **See all size** 
 
@@ -201,7 +221,7 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
 5. In the **Disks** tab, select the **OS disk size** from the drop-down **128 GiB** **(1)** and **OS disk type** as **Standard SSD (locally-redudant storage)** **(2)** and click on **Review + Create** **(3)**.
 
-    ![](../media/vmdisks.png)
+    ![](../media/c2.task2.2.png)
 
 6. In the **Review + Create** tab, click on **Create**.
 

@@ -19,9 +19,9 @@ In this task, you will create a hub and then create a project within the hub. Yo
 
     ![](../media/h150.png)
 
-1. Copy and paste the **Server name** that appears in the **Overview** section of your database server into Notepad.
+1. Copy and paste the **Enpoint** that appears in the **Overview** section of your database server into Notepad.
 
-    ![](../media/h151.png)
+    ![](../media/c6.task1.1.png)
 
 1. On the pane bar for the database server, select the **Cloud Shell** icon.
 
