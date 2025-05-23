@@ -21,7 +21,10 @@ Here is a simple overview of each service used:
 
    - Create an **Azure Storage account** and **container**.
    - Clone the GitHub repository `https://github.com/microsoft/TechExcel-Modernize-applications-to-be-AI-ready.git`, which contains hotel brochures, into your folder named **AssetsRepo**.
-   - Upload the brochures to the storage container.
+   - Upload the brochures to the storage container. The brochures are located in the local path:
+
+      `C:\Users\demouser\AssetsRepo\Assets\PDF` 
+
    - Create an **Azure AI Search Service** instance.
 
 1. **Configure Managed Identities for Deployed Azure Resources:**  
@@ -36,6 +39,7 @@ Here is a simple overview of each service used:
    - Launch the **import and vectorize data** and connect to **Azure Blob Storage**.
    - Create an **Azure OpenAI Service** instance and deploy models to the instance.
    - Vectorize text from the brochures.
+   - Set the index name as brochures-vector
    - Index the data.
    - Test the index by searching for `skiing`. The results should list **skiing** data and contain a text vector.. 
 

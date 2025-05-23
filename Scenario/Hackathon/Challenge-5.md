@@ -17,26 +17,41 @@ Here is a simple overview of each service used:
 
    - Navigate to the **Cloud Shell** terminal in the Azure portal and select **Bash**.
    - Enter the given commands at the Cloud Shell prompt to connect to the **database**.
+      ```
+      export PGHOST="POSTGRESQL_ENDPOINT"
+      export PGUSER="contosoadmin"
+      export PGPORT="5432"
+      export PGDATABASE="pycontosohotel"
+      export PGPASSWORD="1234ABcd!"
+      psql
+      ```   
    - Create a user for the **PostgreSQL database** that allows the chatbot read-only access to the Hotels, Visitors, and Bookings tables.
-   - Create a unique name for an **AI Hub**. Set up and configure an **AI Studio Hub**.
-   - Create a **project** in the **hub**.
-   - Assign the **Storage Blob Data Owner** role to the newly created storage account.
+   -  Grant the user access to the database tables with the following commands:
+      ```
+      GRANT SELECT ON TABLE hotels TO promptflow;
+      GRANT SELECT ON TABLE bookings TO promptflow;
+      GRANT SELECT ON TABLE visitors TO promptflow;
+      GRANT EXECUTE ON FUNCTION getroomsusagewithintimespan TO promptflow;
+      ```
+   - From the Azure portal, Within the Foundry, create a new AI Hub, ensuring you assign a unique name to the AI Hub, AI Service and the associated Storage Account during the setup process.
+   - Assign the **Storage Blob Data Owner** role to the current azure user.
    - Assign the **Storage Blob Data Reader** role to the **AI Hub**.
 
 1. **Import and Configure a Flow:** 
 
    - Create a new project named **contosopf** on the AI Hub.
-   - Navigate to **Prompt Flow** and create a new flow by uploading the **chatflow-oai-datasources.zip** file.
+   - Navigate to **Prompt Flow** and create a new **Chat** flow by uploading the **chatflow-oai-datasources.zip** file.
    - Import a pre-built flow into the project. 
    - Add a new connection to the external assets using **Custom keys** and **Azure AI Search**.
-   - Configure the flow by starting the **Compute session** and adding the connection details such as AI search name, OpenAI name, and search_index name.
+   - For the OpenAI service that was created during the AI Hub setup, deploy the **GPT-4o** model
+   - Start the **Compute session**, then configure the flow by specifying the required connection details, including the  AI search name, OpenAI name, and setting the search_index name to brochures-vector.
    - Test the flow by entering the prompts `Where can I ski?` and `How many free rooms do hotels in Switzerland have grouped by hotel on 2024-10-10?` in the chat. View the results returned by the flow.
 
 1. **Deployment of Configured Prompt Flow**
 
    - Deploy the Prompt Flow as a managed online endpoint for real-time inference with the Virtual Machine SKU of **Standard_D2a_v4**.
 
-     > **Note**: This may take up to 5 minutes to deploy.   
+     > **Note**: This may take up to 10-15 minutes to deploy.   
 
    - Copy the endpoint **target URL** and **primary key** into a notebook.
 

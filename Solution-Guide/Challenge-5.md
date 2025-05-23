@@ -35,10 +35,10 @@ In this task, you will create a hub and then create a project within the hub. Yo
 
     ![](../media/h154.png)
 
-1. Replace the value for **POSTGRESQL_SERVERNAME** with the Server name that appears in the Overview section for your database server that you copied in the previous step. Then, enter the following commands at the Cloud Shell prompt and press **Enter**. These commands connect to the database.   
+1. Replace the value for **POSTGRESQL_ENDPOINT** with the Endpoint name that appears in the Overview section for your database server that you copied in the previous step. Then, enter the following commands at the Cloud Shell prompt and press **Enter**. These commands connect to the database.   
 
    ```
-   export PGHOST="POSTGRESQL_SERVERNAME"
+   export PGHOST="POSTGRESQL_ENDPOINT"
    export PGUSER="contosoadmin"
    export PGPORT="5432"
    export PGDATABASE="pycontosohotel"
@@ -67,66 +67,55 @@ In this task, you will create a hub and then create a project within the hub. Yo
 
     ![](../media/h157.png)
 
-1. Return to Visual Studio Code. Enter the following command at the Terminal window prompt and press **Enter**. This command creates a unique name for an **AI Hub**.
-
-   ```
-   $AI_HUB_NAME="ai-hub$(Get-Random -Minimum 100000 -Maximum 999999)"
-   Write-Host -ForegroundColor Green  "AI Hub name is: " $AI_HUB_NAME
-   ```
-
-    ![](../media/h158.png)
-
-     >**Note:** Record the name of the AI Hub. You will use the name later in this task.
-
-1. Open a **New InPrivate window** and navigate to `https://ai.azure.com/`.     
-
-1. Select **Sign in**. 
-
-1. If prompted, enter your credentials to sign into Azure AI Studio:
-
-     >**Note:** You can find the **Username** and **Password** within the environment by navigating to the **Environment** tab in the left pane.
-
-1. Click on **+ Create project**.
-
-    ![](../media/h159.png)
-
-1. Click on **Customize.**
-
-    ![](../media/h160.png)
-
-1. On the **Create a project** page, provide the following details and click on **Next (6)**.
-
-    - Hub name: **Enter AI Hub name that you recorded in step 9 of this task (1)**.
-    - Subscription: **Leave the default Subscription (2)**
-    - Resource group: Select **Appmod (3)** from the drop-down list.
-    - Location: **Enter the location for the region where you deployed all other resources (4)**
-    - Connect Azure AI Services or Azure OpenAI Service: **Select the name for the OpenAI service instance that you deployed in challenge 01 (5)**
-
-      ![](../media/h161.png)    
-
-1. On the **Review and finish** page, select **Create**. 
-
-    ![](../media/h162.png)
-
-1. Wait until the new AI hub, storage account, and key vault are created.
-
-    ![](../media/h172.png)
-
-     >**Note:** While the resources are being provisioned, take a screenshot of the page that displays or copy and paste the resource name. *You will need to enter the **AI Hub** name and the **Storage account** name later in this task*. 
-
 1. Navigate back to the **Azure portal**.
+
+1. On the Azure Portal page, in the Search resources, services, and docs (G+/) box at the top of the portal, enter **Azure AI Foundry (1)**, and then select **Azure AI Foundry (2)** under **Services**.
+
+    ![](../media/challenge6.task.1.png) 
+
+1. In the left navigation pane for the AI Foundry, select **AI Hubs (1)**. On the AI Hubs page, click on **Create (2)** and select **Hub (3)** from the drop-down.
+
+    ![](../media/challenge6.task.3.png) 
+
+1. On the **Create an AI hub resource** pane enter the following details:
+
+    - Subscription : **Leave default subscription** 
+    - Resource Group : Select **Appmod (1)** 
+    - Region : Use the same location as the resource group **(2)**
+    - Name : Use the format **aihub-xxxxxx (3)** (replace **xxxxxx** with the **Deployment ID**) 
+
+        ![](../media/challenge6.task.4.png) 
+
+    - Connect AI Services incl. OpenAI : Click on **Create New (1)**
+    - Connect AI Services incl. OpenAI : Provide a name to the AI Service ,Use the format **aiservice-xxxxxx (2)** (replace **xxxxxx** with the **Deployment ID**)  
+    - Click on **Save (3)**, followed by **Next:Storage (4)**
+    
+        ![](../media/challenge6.task.5.png) 
+
+        >**Note**: Here, xxxxxx refers to the **deployment ID** which you can get from the Environment tab.
+
+1. For **Storage account**, click on **Create new (1)**, provide a **Name** to the storage account, Use the format **storageaccountxxxxxx (2)** (replace **xxxxxx** with the **Deployment ID**)  and then click on **Save (3)**
+
+     ![](../media/challenge6.task.6.png)
+
+1. Then Select **Review + create > Create.**
+
+    ![](../media/challenge6.task.7.png)
+    ![](../media/challenge6.task.8.png)
+
+1. Wait for the AI Hub deployment to complete.
 
 1. On the Azure home page, select **Resource groups** and then select **Appmod**.
 
 1. You should see two storage accounts. The first is the storage account that you created earlier in the lab. *The other was created by the AI Hub. Select the storage account that was created by AI Hub*.
 
-    ![](../media/h163.png)
+    ![](../media/challenge6.task10.png)
 
-     >**Note:** The name for the newly created storage account will start with **st**.
+     >**Note:** The name for the newly created storage account will start with **storageaccount**.
 
 1. In the left navigation pane for the storage account, select A**ccess Control (IAM) (1)**. On the Access Control (IAM) page, on the **Grant access to this resource** tile, select **Add role assignment (2)**.
 
-    ![](../media/h164.png)
+    ![](../media/challenge6.task11.png)
 
 1. In the search field, enter **Storage Blob Data Owner (1)** and then select **Storage Blob Data Owner (2)** from the search results list. Select **Next (3)**.
 
@@ -134,27 +123,27 @@ In this task, you will create a hub and then create a project within the hub. Yo
 
 1. On the **Add role assignment** page, select **+Select members (1)**. In the Select members pane, search for your username provided in the Environment tab **(2)** and select your username **(3)**. Click on **Select (4)** to close the **Select members** pane.    
 
-    ![](../media/h166.png)
+    ![](../media/challenge6.task12.png)
 
 1. Then, select **Review + assign** twice.  
 
-    ![](../media/h167.png)
+      ![](../media/challenge6.task13.png)
 
 1. On the **Access Control (IAM)** page, on the **Grant access to this resource** tile, select **Add role assignment** to add a second role assignment.    
 
-    ![](../media/h168.png)
+    ![](../media/challenge6.task11.png)
 
 1. In the Search field, enter **Storage Blob Data Reader (1)** and then select **Storage Blob Data Reader (2)** from the search results list. Select **Next (3)**.
 
     ![](../media/h169.png)
 
-1. On the **Add role assignment** page, select **+Select members (1)**. In the Select members pane, **search (2)** for and **select (3)** the name for the *AI Hub that you created in Step 9 of this task* and then choose **Select (4)**.
+1. On the **Add role assignment** page, select **+Select members (1)**. In the Select members pane, **search (2)** for and **select (3)** the name for the *AI Hub that you created in Step 12 of this task* and then choose **Select (4)**.
 
-    ![](../media/h170.png)
+    ![](../media/challenge6.task14.png)
 
 1. Then, select **Review + assign** twice.
 
-    ![](../media/h171.png)
+    ![](../media/challenge6.task15.png)
 
 
 ### Task 2: Import and Configure a Flow 
@@ -163,15 +152,18 @@ A flow encapsulates the logic that tells the chatbot what it can do and how to d
 
 In this task, you will import a pre-built flow, configure flow settings, and then test the flow.  
 
-1. Return to the Azure AI Studio browser window, which is opened in a private window.
+1. In the Azure portal, Navigate and select the AI Hub that is created in the previous task.
 
-1. Click on **All hubs+projects (1)** and then select the AI hub that you have created previously **(2)**.
+    ![](../media/aihub.png) 
 
-    ![](../media/hh3.png)
+1. On the Overview pane, click on **Launch Azure AI Foundry**. This will navigate you to the Azure AI Foundry portal.
+
+    ![](../media/challenge6.task18.png)
+
 
 1. Scroll down and click on **+ New project** on the Hub Overview. 
 
-    ![](../media/h174.png)
+    ![](../media/challenge6.task19.png)
 
 1. Provide the project name as **contosopf (1),** then click on **Create (2)**.
 
@@ -179,11 +171,11 @@ In this task, you will import a pre-built flow, configure flow settings, and the
 
 1. In the left navigation pane for the project page, in the **Build and customize** section, select **Prompt flow**.
 
-    ![](../media/h176.png)
+    ![](../media/challenge6.task21.png)
 
 1. On the **Create, iterate, and debug your orchestration flows** page, select **+Create**.
 
-    ![](../media/h177.png)
+    ![](../media/challenge6.task22.png)
 
 1. On the **Create a new flow** page, in the **Upload from local** section, select **Upload**.
 
@@ -219,11 +211,11 @@ In this task, you will import a pre-built flow, configure flow settings, and the
 
     ![](../media/h150.png)
 
-1. In the **Overview section** for the database, copy and paste the value of the **Server name** into Notepad. You will pass the value into a field in Step 22 of this task. 
+1. In the **Overview section** for the database, copy and paste the value of the **Endpoint** into Notepad. You will pass the value into a field in Step 22 of this task. 
 
-    ![](../media/h151.png)
+    ![](../media/c6.task1.1.png)
 
-1. Return to the Azure AI Studio browser window, which is opened in a private window.
+1. Return to the Azure AI Studio browser window.
 
 1. In the left navigation pane for the flow, select **Management Center**.
 
@@ -246,7 +238,7 @@ In this task, you will import a pre-built flow, configure flow settings, and the
     | Field | Value |
     | -- | -- |
     | Custom keys | **hostname (1)**|
-    | Value | **Use the server name you copied in Step 16 of this lab (2)**|    
+    | Value | **Use the Endpoint name you copied in Step 16 of this lab (2)**|    
 
      ![](../media/h188.png)    
 
@@ -285,7 +277,7 @@ In this task, you will import a pre-built flow, configure flow settings, and the
     | Value | **1234ABCD!**| 
     | Is Secret | **Selected**|
 
-     ![](../media/h190.png)
+     ![](../media/challenge6.task23.png)
 
 1. In the *Connection name* field, enter **PostgreSQL (1)** and select **Add connection (2)**.
 
@@ -301,27 +293,51 @@ In this task, you will import a pre-built flow, configure flow settings, and the
 
 1. Select **Add connection** to the right of your Azure AI Search Service.    
 
-    ![](../media/h194.png)
+    ![](../media/connection.png)
 
 1. Click on **Close**.
 
-    ![](../media/h213.png)
+    ![](../media/connection1.png)
 
 1. In the left navigation pane, click on **Go to project.**
 
     ![](../media/h199.png)
 
-1. In the left navigation pane for the flow, in the **Build and customize** section, select **Prompt flow.** 
 
-    ![](../media/h200.png)
+1. In the left navigation pane for the flow, in the **My assets** section, select **Model + endpoints (1)** , and then select the **+ Deploy Model (2)** drop-down. Next, choose **Deploy Base Model (3)**. 
+
+     ![](../media/challenge6.task29.png)
+
+1. Search for **GPT-4o (1),** then select **GPT-4o (2)** and click on **Confirm (3)**.
+
+    ![](../media/challenge6.task30.png)
+
+1. Within the **"Deploy model"** pop-up interface, click on **Customize**.
+
+    ![](../media/model.png)
+    
+1. On the **Deploy gpt-4o,** enter the following details:
+
+    - Deployment name: **gpt-4o (1)**
+    - Deployment type: **Standard (2)**
+    - Model version upgrade policy: **Upgrade once new default version becomes available (3)**
+    - Model version: **select the default (4)**
+    - Tokens per Minute Rate Limit (thousands): **20K (5)**
+    - Enable dynamic quota: **Enabled (6)**
+    - Click on **Deploy (7)**
+
+      ![](../media/challenge6.task31.png)
+
+1. In the left navigation pane for the flow, in the **Build and customize** section, select **Prompt flow.** 
+    ![](../media/challenge6.task24.png)
 
 1. Select **Start compute session**. This allows you to run and test the chatbot.    
 
-    ![](../media/h201.png)
+    ![](../media/challenge6.task25.png)
 
 1. Locate the **check_question_intent** tile. Click on the  **Connection (1)** field drop-down, and select the connection that displays **(2)**.
 
-    ![](../media/h202.png)
+    ![](../media/challenge6.task26.png)
 
 1. Scroll down to the **chat_with_data** tile and under the **Inputs** section.   
 
@@ -329,11 +345,11 @@ In this task, you will import a pre-built flow, configure flow settings, and the
     - Select the value of **ai_connection** and then select your Azure OpenAI resource from the drop-down list **(2)**.
     - Change the value of **search_index** to **brochures-vector (3)**.
 
-      ![](../media/h203.png)
+      ![](../media/challenge6.task27.png)
 
 1. Scroll down to the **generate_sql** tile. In the **Connection** field, select the connection that displays.      
 
-    ![](../media/h204.png)
+    ![](../media/challenge6.task28.png)
 
 1. Scroll down to the bottom of the **conclude_answer** tile. We’ll input a value into the field that will populate after testing the next steps. 
 
@@ -373,17 +389,17 @@ In this task, you will import a pre-built flow, configure flow settings, and the
 
 1. In the prompt flow tab, click on **Deploy**.
 
-    ![](../media/newimag1.png)
+    ![](../media/challenge6.task32.png)
 
 1. In the **Basic settings** tab of the Deploy prompt flow, select the Virtual machine size as **Standard_D2a_v4** **(1)** and click on the **Review + Create** **(2)** button.
 
-    ![](../media/newimag2.png)
+    ![](../media/challenge6.task33.png)
 
 1. In the **Review** tab of the Deploy prompt flow, click on the **Create** **(1)** button.
 
-    ![](../media/newimag3.png)
+    ![](../media/challenge6.task34.png)
 
-    > **Note**: The deployment of the endpoint may take 5 minutes, so please wait.
+    > **Note**: The deployment of the endpoint may take 10-15 minutes, so please wait.
 
 1. Once the deployment has succeeded, from the left side pane, select **Models + endpoints** **(1)** under the **My assets** session, and open the newly deployed endpoint **Contosopf-suffix** **(2)**.
 
@@ -569,9 +585,9 @@ In this task, you will import a pre-built flow, configure flow settings, and the
 
        >**Note:** You can find the **Password**, on the Lab VM's **Environment** page.   
 
-    - On the **Stay signed in to all your apps** page, select **No sign in to this app only.**
+    - On the **Automatically sign to all desktop app and websites in this device** page, select **No, this app only.**
 
-      ![](../media/h50.png)         
+      ![](../media/c3.task1.1.png)        
 
 1. Navigate back to Visual Studio Code. Press **Enter** to **Select a subscription and tenant**.      
 
