@@ -12,8 +12,45 @@ To improve the app's scalability, Contoso plans to split the frontend components
 
 1. **Separate frontend components from backend components:**
 
-   - Create a folder named **UpdatedApp** with subfolders **Frontend** and **Backend**.
-   - Copy all frontend files to the **Frontend** folder and all backend files to the **Backend** folder.
+   - Create a folder named **UpdatedApp** with subfolders **Frontend** and **Backend**. Run the following commands in PowerShell to create the necessary directory structure under the ContosoHotel folder:
+
+      ```
+      mkdir -p C:\temp\ContosoHotel\UpdatedApp\Frontend
+      mkdir -p C:\temp\ContosoHotel\UpdatedApp\Backend
+      ```
+
+   - Copy all frontend files to the **Frontend** folder and all backend files to the **Backend** folder. 
+     * Enter the following commands in PowerShell to copy frontend files:
+
+         ```
+         cp startup.* C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend
+         cp uwsgi.ini C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend
+         cp Dockerfile C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend
+         cp *.docker* C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend
+         cp requirements.txt C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend
+         ```
+      * Enter the following commands in PowerShell to create a subfolder in the Frontend folder and copy all necessary files to the subfolder.
+
+         ```
+         cp -r C:/Users/demouser/ContosoHotel/contoso_hotel/static C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend\contoso_hotel\static
+         cp -r C:/Users/demouser/ContosoHotel/contoso_hotel/templates C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend\contoso_hotel\
+         cp C:/Users/demouser/ContosoHotel/contoso_hotel/*.py C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend\contoso_hotel\
+         ```
+      * Enter the following commands in PowerShell to copy backend files:
+
+         ``` 
+         cp *.sql C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend
+         cp startup.* C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend
+         cp uwsgi.ini C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend
+         cp *docker* C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend
+         cp requirements.txt C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend
+         ```
+      * Enter the following commands in PowerShell to create a subfolder in the Frontend folder and copy all necessary files to the subfolder.
+
+         ```
+         cp -r C:/Users/demouser/ContosoHotel/contoso_hotel/dblayer C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend\contoso_hotel\dblayer
+         cp C:/Users/demouser/ContosoHotel/contoso_hotel/*.py C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend\contoso_hotel\ 
+         ```
 
 1. **Refactor Files:**
 
@@ -32,8 +69,17 @@ To improve the app's scalability, Contoso plans to split the frontend components
 1. **Build the containers for frontend and backend components and push the containers to Azure:**   
 
    - Build separate containers for frontend and backend application components.
-   - Run the **az containerapp env create** cmdlet to create an ACR environment for the app.
-   - Create container apps for frontend and backend components.
+   - Run the **az containerapp env create** cmdlet to create an ACR environment for the app.You can use the following command"
+   ```
+   $CONTOSO_HOTEL_ENV = "contosoenv$(Get-Random -Minimum 100000 -Maximum 999999)"
+   $CONTOSO_ACR_CREDENTIAL = az acr credential show --name $ACR_NAME --query "passwords[0].value" -o tsv
+   az containerapp env create --name "$CONTOSO_HOTEL_ENV" --resource-group "Appmod" --location "$AZURE_REGION"
+   Write-Host -ForegroundColor Green  "Default Domain is: $(az containerapp env show --name "$CONTOSO_HOTEL_ENV" --resource-group "Appmod" --query "properties.defaultDomain" -o tsv)"
+   ```
+   - Create container apps for frontend and backend components. 
+
+      
+
    - Run the **az containerapp ingress cors** command to manage Cross-Origin Resource Sharing (CORS) policies for the container apps.
 
      <validation step="207cf525-c031-4b78-87e0-309f7f9f3b25" />   

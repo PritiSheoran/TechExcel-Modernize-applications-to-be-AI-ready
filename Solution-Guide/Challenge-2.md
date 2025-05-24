@@ -97,46 +97,6 @@ In this task, you will create the Docker container and add app components to the
    cd ..
    ```
 
-1. Enter the following **command (1)** and press **Enter**. This command allows you to run commands as an administrator **(2)**.
-
-   ```
-   Start-Process powershell -Verb runAs
-   ```
-
-    ![](../media/h35.png)   
-
-1. As soon as you enter the command, a PowerShell window opens.   
-
-   ![](../media/h36.png)
-
-1. Enter the following command at the PowerShell prompt and then press **Enter**. This command configures the Docker daemon to start automatically.
-
-   ```
-   Set-Service -Name com.docker.service -StartupType Automatic
-   ```
-
-    ![](../media/hack2.png)   
-
-     >**Note:** The Set-Service command will fail if you are not running PowerShell as an administrator.
-
-1. Enter the following command at the PowerShell prompt and then press **Enter**. This command manually starts the Docker daemon. 
-
-   ```
-   Start-Service -Name com.docker.service
-   ```
-
-    ![](../media/hack3.png)      
-
-1. Enter the following command at the PowerShell prompt and then press **Enter**. This command checks the status of the Docker daemon. Verify that the results show the Docker daemon is running.    
-
-   ```
-   Get-Service -Name com.docker.service
-   ```
-
-    ![](../media/h39.png)   
-
-1. Minimize the PowerShell window. Return to Visual Studio Code.
-
 1. Enter the below command to navigate back to the **ContosoHotel** folder where the cloned repository resides.
 
    ```

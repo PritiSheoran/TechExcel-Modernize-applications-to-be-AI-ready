@@ -231,19 +231,24 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
     ![](../media/select-deployed-vm.png)
 
-8. Expand the **Connect** **(1)** tab and click on **Connect** **(2).** Moving on, click on **Select** **(3)** under Native SSH. Check "Configure prerequisites for Native SSH" success status and proceed with step **(4),** copying the **SSH to VM with specified private key** under **Copy and execute SSH command** option.
+8. In order to connect to the Virtual machine copy the **Public IP Address.**
 
-    ![](../media/vmsshcopy.png)
+    ![](../media/Vm.png)
 
-    > **Note**: Paste the SSH endpoint in Notepad
+    > **Note**: Paste the Public IP Address in Notepad
 
 9. In the JumpVM, search for **cmd** **(1)** and select **Command Prompt** **(2)**
 
     ![](../media/select-cmd.png)
 
-10. Paste the recoded **SSH endpoint** **(1)** and hit the **Enter** button. In **Are you sure you want to continue Connection (yes/no/[fingerprint])?** enter **yes** **(1)**, hit **Enter** button, and write the **password** **(3).** Click on the **Enter** button again.
+10. To connect to your virtual machine, use the SSH command below. Replace Vmuser with the username you provided during the VM creation process, and replace <Public IP> with the public IP address copied in the previous step, and hit **Enter** button,write the **password** Click on the **Enter** button again.
 
-    ![](../media/connectssh.png)
+      `ssh Vmuser@<Public IP>`
+
+      ![](../media/c2.task2.3.png)
+
+
+      >**Note:** If your prompted with **Are you sure you want to continue Connection (yes/no/[fingerprint])?** enter **yes** **(1)**
 
     > **Note**: Once you are connected to the virtual Machines, it takes 2-3 minutes to complete the setup process. Please wait till it gets completed.
 
@@ -282,27 +287,28 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
    
    ```bash
    # Set model selector
-   export NIM_TAGS_SELECTOR="name=parakeet-1-1b-ctc-riva-en-us,mode=all"
+   export CONTAINER_ID=parakeet-1-1b-ctc-en-us
+   export NIM_TAGS_SELECTOR="mode=all"
 
    # Run the container
-   docker run -it --rm --name=riva-asr \
-      --gpus '"device=0"' \
-      --shm-size=8GB \
-      -e NGC_API_KEY \
-      -e NIM_HTTP_API_PORT=9000 \
-      -e NIM_GRPC_API_PORT=50051 \
-      -p 9000:9000 \
-      -p 50051:50051 \
-      -e NIM_TAGS_SELECTOR \
-      nvcr.io/nim/nvidia/riva-asr:1.3.0
+   docker run -it --rm --name=$CONTAINER_ID \
+   --runtime=nvidia \
+   --gpus '"device=0"' \
+   --shm-size=8GB \
+   -e NGC_API_KEY \
+   -e NIM_HTTP_API_PORT=9000 \
+   -e NIM_GRPC_API_PORT=50051 \
+   -p 9000:9000 \
+   -p 50051:50051 \
+   -e NIM_TAGS_SELECTOR \
+   nvcr.io/nim/nvidia/$CONTAINER_ID:latest
    ```
-
    ![](../media/download-deploy-run.png)
 
    > **Note**: Please use the NGC keys provided below.
   
      ```
-     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
+     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
      ```
 
    > **Note**: Setting up the NVIDIA Riva model within the Docker Desktop environment can be a time-consuming process. Depending on factors such as network speed and system performance, the setup procedure may take as long as one hour to complete. Please be patient and allow sufficient time for the installation and configuration to finish. Minimize the tab and proceed with the next challenge while monitoring the configuration every 20 minutes.
