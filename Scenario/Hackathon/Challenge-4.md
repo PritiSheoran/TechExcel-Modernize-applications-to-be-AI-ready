@@ -20,7 +20,7 @@ Here is a simple overview of each service used:
 1. **Create Azure Services:**
 
    - Create an **Azure Storage account** and **container**.
-   - Clone the GitHub repository `https://github.com/microsoft/TechExcel-Modernize-applications-to-be-AI-ready.git`, which contains hotel brochures, and rename the folder to**AssetsRepo**.
+   - Clone the GitHub repository `https://github.com/microsoft/TechExcel-Modernize-applications-to-be-AI-ready.git`, which contains hotel brochures, and rename the folder to **AssetsRepo**.
    - Upload the brochures to the storage container. The brochures are located in the path:
 
       `AssetsRepo/Assets/PDFs` 
