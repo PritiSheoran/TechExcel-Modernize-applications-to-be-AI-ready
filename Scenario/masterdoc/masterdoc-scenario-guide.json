@@ -2,42 +2,42 @@
   {
   "Name": "App Modernization Hackathon",
   "Language": "English",
-  "BaseURL": "https://github.com/CloudLabsAI-Azure/TechExcel-Modernize-applications-to-be-AI-ready/tree/Nvidia-Content",
+  "BaseURL": "https://github.com/CloudLabsAI-Azure/TechExcel-Modernize-applications-to-be-AI-ready/tree/content-review",
   "Files": [
      {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/TechExcel-Modernize-applications-to-be-AI-ready/refs/heads/Nvidia-Content/Scenario/Hackathon/README.md",
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/TechExcel-Modernize-applications-to-be-AI-ready/refs/heads/content-review/Scenario/Hackathon/README.md",
        "Order": 1
      },
      {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/TechExcel-Modernize-applications-to-be-AI-ready/refs/heads/Nvidia-Content/Scenario/Prerequisites.md",
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/TechExcel-Modernize-applications-to-be-AI-ready/refs/heads/content-review/Scenario/Prerequisites.md",
        "Order": 2
      },
      {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/TechExcel-Modernize-applications-to-be-AI-ready/refs/heads/Nvidia-Content/Scenario/Hackathon/Challenge-1.md",
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/TechExcel-Modernize-applications-to-be-AI-ready/refs/heads/content-review/Scenario/Hackathon/Challenge-1.md",
        "Order": 3
      },
      {
-      "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/TechExcel-Modernize-applications-to-be-AI-ready/refs/heads/Nvidia-Content/Scenario/Hackathon/Challenge-7.md",
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/TechExcel-Modernize-applications-to-be-AI-ready/refs/heads/content-review/Scenario/Hackathon/Challenge-7.md",
      "Order": 4
       },
      {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/TechExcel-Modernize-applications-to-be-AI-ready/refs/heads/Nvidia-Content/Scenario/Hackathon/Challenge-2.md",
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/TechExcel-Modernize-applications-to-be-AI-ready/refs/heads/content-review/Scenario/Hackathon/Challenge-2.md",
        "Order": 5
      },
      {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/TechExcel-Modernize-applications-to-be-AI-ready/refs/heads/Nvidia-Content/Scenario/Hackathon/Challenge-3.md",
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/TechExcel-Modernize-applications-to-be-AI-ready/refs/heads/content-review/Scenario/Hackathon/Challenge-3.md",
        "Order": 6
      },
      {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/TechExcel-Modernize-applications-to-be-AI-ready/refs/heads/Nvidia-Content/Scenario/Hackathon/Challenge-4.md",
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/TechExcel-Modernize-applications-to-be-AI-ready/refs/heads/content-review/Scenario/Hackathon/Challenge-4.md",
        "Order": 7
      },
      {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/TechExcel-Modernize-applications-to-be-AI-ready/refs/heads/Nvidia-Content/Scenario/Hackathon/Challenge-5.md",
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/TechExcel-Modernize-applications-to-be-AI-ready/refs/heads/content-review/Scenario/Hackathon/Challenge-5.md",
        "Order": 8
      },
      {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/TechExcel-Modernize-applications-to-be-AI-ready/refs/heads/Nvidia-Content/Scenario/Hackathon/Challenge-6.md",
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/TechExcel-Modernize-applications-to-be-AI-ready/refs/heads/content-review/Scenario/Hackathon/Challenge-6.md",
        "Order": 9
      }
   ]
