@@ -45,7 +45,7 @@ To improve the app's scalability, Contoso plans to split the frontend components
          cp *docker* C:\temp\ContosoHotel\UpdatedApp\Backend 
          cp requirements.txt C:\temp\ContosoHotel\UpdatedApp\Backend 
          ```
-      * Enter the following commands in PowerShell to create a subfolder in the Frontend folder and copy all necessary files to the subfolder.
+      * Enter the following commands in PowerShell to create a subfolder in the Backend folder and copy all necessary files to the subfolder.
 
         ```
         cp -r C:/temp/ContosoHotel/contoso_hotel/dblayer C:\temp\ContosoHotel\UpdatedApp\Backend\contoso_hotel\dblayer 
