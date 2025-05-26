@@ -27,7 +27,7 @@ Here is a simple overview of each service used:
 
    - Create an **Azure AI Search Service** instance.
 
-1. **Configure Managed Identities for Deployed Azure Resources:**  
+2. **Configure Managed Identities for Deployed Azure Resources:**  
 
    - Configure the **Azure OpenAI** and **Azure AI Search** instances to use **system-assigned managed identities**.
    - Based on the commands, here's a revised and professional version of the statement including the specific role:
@@ -35,8 +35,7 @@ Here is a simple overview of each service used:
    - **Configure a managed identity** to allow the Azure AI Search instance to access the Azure OpenAI Service instance by assigning the **Cognitive Services OpenAI Contributor** role to the Search service's managed identity.
    - **Configure a managed identity** to allow the Azure OpenAI Service instance to access the Azure AI Search instance by assigning the **Search Index Data Contributor**, **Search Index Data Reader**, and **Search Service Contributor** roles to the OpenAI service’s managed identity.
 
-
-1. **Configure Azure AI Search to extract data from the brochures and test the search index:**
+3. **Configure Azure AI Search to extract data from the brochures and test the search index:**
 
    - Launch the **import and vectorize data** and connect to **Azure Blob Storage**.
    - Create an **Azure OpenAI Service** instance and deploy models to the instance.

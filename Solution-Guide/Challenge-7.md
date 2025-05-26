@@ -46,7 +46,7 @@ You will be redirected to a page where you can create your NVIDIA account. Provi
 
      >**Note:** You may be asked to choose the pictures. If requested, please complete and verify.
 
-   ![](../media/i-14.png)
+     ![](../media/i-14.png)
 
 1. **Verify Your Email Address**:
 Log into your **email,** and you will get a verification code to complete the verification process.
@@ -85,7 +85,7 @@ To enable API access, you need to verify your account by following these steps:
 
    ![](../media/c2.task1.01.png)
 
-Now Verify that you are provided with 40 requests per minute (RPM) to try out RIVA.
+   Now Verify that you are provided with 40 requests per minute (RPM) to try out RIVA.
 
    ![](../Scenario/Hackathon/media/nvaie-7-1.png)
 
@@ -246,9 +246,9 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
       ![](../media/c2.task2.3.png)
 
 
-      >**Note:** If your prompted with **Are you sure you want to continue Connection (yes/no/[fingerprint])?** enter **yes**.
-
-    > **Note**: Once you are connected to the virtual Machines, it takes 2-3 minutes to complete the setup process. Please wait till it gets completed.
+      >**Note:** 
+      - If your prompted with **Are you sure you want to continue Connection (yes/no/[fingerprint])?** enter **yes**. 
+      - Once you are connected to the virtual Machines, it takes 2-3 minutes to complete the setup process. Please wait till it gets completed.
 
 ### Task 3: Set Up and Run NVIDIA Riva ASR Container
 

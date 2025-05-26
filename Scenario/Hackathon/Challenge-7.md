@@ -65,11 +65,11 @@ Riva ASR supports mono, 16-bit audio in WAV, OPUS, and FLAC formats. If you do n
 
    - Click on **Generate API Key** to create a new key to access the necessary services.
 
-      ![](../../media/nvidia5.png)
-
-   - From the top, click on **+ Generate API Key** to create a new API key.
-
       ![](../../media/genkey.png)
+
+   - From the top, click on **+ Generate Personal Key** to create a new API key.
+
+      ![](../../media/c1.task1.02.png)
 
    - Generate Personal Key: Grant your key permission to access or download containers and artifacts from the NGC Catalog.
 
