@@ -658,11 +658,17 @@ In this task, you will import a pre-built flow, configure flow settings, and the
    ```
 
     >**Note:** If you encounter any error when creating the container app, first retrieve the Container Apps environment            name using the following command:
+    ```
     az containerapp env list --resource-group Appmod --query "[].name" -o tsv
+    ```
     Assign it to the variable:
+   ```
     $CONTOSO_HOTEL_ENV = "<your-environment-name>"
+   ```
     Then retrieve the ACR credential using:
+   ```
     $CONTOSO_ACR_CREDENTIAL = az acr credential show --name $ACR_NAME --query "passwords[0].value" -o tsv
+   ```
     Re-run the container app creation command after these steps.
 
 1. Copy the Chatapp URL, open a new web browser window, and go to the URL for the Chatapp container.
