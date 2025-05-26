@@ -305,10 +305,10 @@ In this task, you will build separate containers for frontend and backend compon
 
      >**Note:** It may take 2-3 minutes for these commands to complete.
 
-1. Replace the **ENTER_CONNECTION_STRING_FROM_CHALLENGE02_TASK04** placeholder text in the following command with the connection string you recorded in *Challenge 02 Task 04*. Enter the command at the Visual Studio Code Terminal window prompt and then select **Enter** after the last command. These commands create the container app for the backend app components.
+1. Replace the **ENTER_CONNECTION_STRING_FROM_CHALLENGE03_TASK04** placeholder text in the following command with the connection string you recorded in *Challenge 03 Task 04*. Enter the command at the Visual Studio Code Terminal window prompt and then select **Enter** after the last command. These commands create the container app for the backend app components.
 
    ```
-   az containerapp create --name "backend" --resource-group "Appmod" --environment "$CONTOSO_HOTEL_ENV" --image "$ACR_NAME.azurecr.io/pycontosohotel-backend:v1.0.0" --target-port 8000 --ingress external --transport http --registry-server "$ACR_NAME.azurecr.io" --registry-username "$ACR_NAME" --registry-password "$CONTOSO_ACR_CREDENTIAL" --env-vars POSTGRES_CONNECTION_STRING="ENTER_CONNECTION_STRING_FROM_CHALLENGE02_TASK04"
+   az containerapp create --name "backend" --resource-group "Appmod" --environment "$CONTOSO_HOTEL_ENV" --image "$ACR_NAME.azurecr.io/pycontosohotel-backend:v1.0.0" --target-port 8000 --ingress external --transport http --registry-server "$ACR_NAME.azurecr.io" --registry-username "$ACR_NAME" --registry-password "$CONTOSO_ACR_CREDENTIAL" --env-vars POSTGRES_CONNECTION_STRING="ENTER_CONNECTION_STRING_FROM_CHALLENGE03_TASK04"
    $CONTOSO_BACKEND_URL = "https://$(az containerapp show --name "backend" --resource-group "Appmod" --query 'properties.configuration.ingress.fqdn' -o tsv)"
    Write-Host -ForegroundColor Green  "Backend URL is: $CONTOSO_BACKEND_URL"
    ```
@@ -341,9 +341,9 @@ In this task, you will build separate containers for frontend and backend compon
 
     ![](../media/h118.png) 
 
-1. In the left navigation pane for the container app, in the **Settings (1)** section, select **CORS (2)**.    
+1. In the left navigation pane for the container app, in the **Networking (1)** section, select **CORS (2)**.    
 
-    ![](../media/h119.png) 
+    ![](../media/c4.task3.1.png) 
 
 1. In the **Allowed Origins (1)** field, enter the value for the frontend URL that you recorded in Step 14 of this task, and then navigate to the **Allowed Methods (2)** field.   
 

@@ -160,9 +160,13 @@ In this task, you will use Azure AI Search to import and vectorize data from the
 
     ![](../media/h138.png)
 
-1. On the **Connect to your data** page, select **Azure Blob Storage**.    
+1. On the **Lets start by picking a data source..** page, select **Azure Blob Storage**.    
 
-    ![](../media/h139.png)
+    ![](../media/c5.task2.1.png)
+
+1. On the **What scenario are you targeting?** page, select **RAG**. 
+
+    ![](../media/c5.task2.2.png)
 
 1. On the **Configure your Azure Blob Storage** page, enter the following information and then select **Next (3)**. Wait while Azure validates the connection:    
 

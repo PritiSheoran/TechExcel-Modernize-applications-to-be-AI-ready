@@ -21,22 +21,27 @@ Here is a simple overview of each service used:
 
    - Create an **Azure Storage account** and **container**.
    - Clone the GitHub repository `https://github.com/microsoft/TechExcel-Modernize-applications-to-be-AI-ready.git`, which contains hotel brochures, into your folder named **AssetsRepo**.
-   - Upload the brochures to the storage container.
+   - Upload the brochures to the storage container. The brochures are located in the local path:
+
+      `C:\Users\demouser\AssetsRepo\Assets\PDF` 
+
    - Create an **Azure AI Search Service** instance.
 
 1. **Configure Managed Identities for Deployed Azure Resources:**  
 
    - Configure the **Azure OpenAI** and **Azure AI Search** instances to use **system-assigned managed identities**.
-   - Configure a managed identity to allow the **Azure AI Search** and **Azure OpenAI** instances to access the **Azure Blob Storage** account.
-   - Configure a managed identity to allow the **Azure AI Search** instance to access the **Azure OpenAI Service** instance.
-   - Configure a managed identity to allow the **Azure OpenAI Service** instance to access the **Azure AI Search** instance.
+   - Based on the commands, here's a revised and professional version of the statement including the specific role:
+   - **Configure a managed identity** to allow the Azure AI Search and Azure OpenAI instances to access the Azure Blob Storage account by assigning the **Storage Blob Data Contributor** role to their respective identities.
+   - **Configure a managed identity** to allow the Azure AI Search instance to access the Azure OpenAI Service instance by assigning the **Cognitive Services OpenAI Contributor** role to the Search service's managed identity.
+   - **Configure a managed identity** to allow the Azure OpenAI Service instance to access the Azure AI Search instance by assigning the **Search Index Data Contributor**, **Search Index Data Reader**, and **Search Service Contributor** roles to the OpenAI service’s managed identity.
+
 
 1. **Configure Azure AI Search to extract data from the brochures and test the search index:**
 
    - Launch the **import and vectorize data** and connect to **Azure Blob Storage**.
    - Create an **Azure OpenAI Service** instance and deploy models to the instance.
    - Vectorize text from the brochures.
-   - Index the data.
+   - Index the data while setting the index name as "brochures-vector".
    - Test the index by searching for `skiing`. The results should list **skiing** data and contain a text vector.. 
 
      <validation step="932c0914-39fe-4f3b-b876-6d0169c84b56" />   

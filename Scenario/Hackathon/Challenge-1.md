@@ -55,7 +55,7 @@ Make sure you have the following from the CloudLabs-provided integrated environm
    - Obtain the necessary Azure OpenAI Key and Endpoint.
    - Please ensure the Azure OpenAI Service name follows this format: **OpenAI-xxxxxx**, where xxxxxx should be replaced with your specific **Deployment ID**.    
 
-     <validation step="	e958ee57-1b51-469f-86a0-44889bee9648" />
+      <validation step="	e958ee57-1b51-469f-86a0-44889bee9648"/>
 
 1. **Deploy Large Language Models (LLM):**
    

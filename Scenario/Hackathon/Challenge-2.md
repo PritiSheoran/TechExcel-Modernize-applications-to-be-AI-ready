@@ -36,9 +36,13 @@ Here's a simple overview of each service used by the app:
 1. **Provision a PostgreSQL Database to Support the App:**   
 
    - Run the **Connect-AzAccount** cmdlet to connect Visual Studio Code to Azure with an authenticated account.
-   - Run the **manageIac.ps1** script from the **ContosoHotel\iac** folder to deploy an Azure Database for PostgreSQL Flexible Server instance.
-   > **Note**: Use the same region you used in Challenge 1.  
-   > **Note**: Make sure to use the **Appmod** resource group.
+   - Run the **manageIac.ps1** script from the **ContosoHotel\iac** folder to deploy an Azure Database for PostgreSQL Flexible Server instance. Use the following command, ensuring you replace "REPLACE_WITH_REGION_YOU_SELECTED_IN_CHALLENGE1" with the same region selected in Challenge 1:
+   
+      ```
+      .\iac\manageIac.ps1 -iacAction create -passwd "1234ABcd!" -deploy "postgresql" -rgname "$RG" -location "REPLACE_WITH_REGION_YOU_SELECTED_IN_CHALLENGE1"
+      ```
+
+      > **Note**: Make sure to use the **Appmod** resource group.
 
      <validation step="86139f4d-d94b-44f4-aef0-be0923be574f" />   
 

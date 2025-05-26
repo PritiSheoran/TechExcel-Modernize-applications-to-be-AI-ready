@@ -97,46 +97,6 @@ In this task, you will create the Docker container and add app components to the
    cd ..
    ```
 
-1. Enter the following **command (1)** and press **Enter**. This command allows you to run commands as an administrator **(2)**.
-
-   ```
-   Start-Process powershell -Verb runAs
-   ```
-
-    ![](../media/h35.png)   
-
-1. As soon as you enter the command, a PowerShell window opens.   
-
-   ![](../media/h36.png)
-
-1. Enter the following command at the PowerShell prompt and then press **Enter**. This command configures the Docker daemon to start automatically.
-
-   ```
-   Set-Service -Name com.docker.service -StartupType Automatic
-   ```
-
-    ![](../media/hack2.png)   
-
-     >**Note:** The Set-Service command will fail if you are not running PowerShell as an administrator.
-
-1. Enter the following command at the PowerShell prompt and then press **Enter**. This command manually starts the Docker daemon. 
-
-   ```
-   Start-Service -Name com.docker.service
-   ```
-
-    ![](../media/hack3.png)      
-
-1. Enter the following command at the PowerShell prompt and then press **Enter**. This command checks the status of the Docker daemon. Verify that the results show the Docker daemon is running.    
-
-   ```
-   Get-Service -Name com.docker.service
-   ```
-
-    ![](../media/h39.png)   
-
-1. Minimize the PowerShell window. Return to Visual Studio Code.
-
 1. Enter the below command to navigate back to the **ContosoHotel** folder where the cloned repository resides.
 
    ```
@@ -211,9 +171,9 @@ In this task, you will create an Azure Container Registry (ACR) instance to stor
 
        >**Note:** You can find the **Password** in the Lab VM's **Environment** page.   
 
-    - On the **Stay signed in to all your apps** page, select **No sign in to this app only.**
+    - On the **Automatically sign to all desktop app and websites in this device** page, select **No, this app only.**
 
-      ![](../media/h50.png)         
+      ![](../media/c3.task1.1.png)         
 
 1. Navigate back to Visual Studio Code. Press **Enter** or **Select a subscription and tenant**.      
 
@@ -305,7 +265,7 @@ The Contoso Hotel legacy app stores data in a PostgreSQL database.
 
        >**Note:** You can find the **Password** on the Lab VM's **Environment** page.   
 
-    - On the **Stay signed in to all your apps** page, select **OK** and then select **Done**.
+    - On the **Automatically sign to all desktop app and websites in this device** page, select **No, this app only.**
 
 1. Navigate back to Visual Studio Code. You will see that you are already logged in.
 
@@ -381,9 +341,9 @@ In this task, you will run the Docker app container and then display the setup p
 
     - Visitor: **Type in the letter `a` into the field and 'double click' on any name that you want to select from the drop-down list (2)**
 
-    - Check-in: **03/08/2025 (3)**
+    - Check-in: **Choose a future date of your preference (3)**
 
-    - Check-out: **03/09/2025 (4)**
+    - Check-out: **Choose a date after the check-in for check-out (4)**
 
     - Adults: **2 (5)**
 

@@ -19,13 +19,17 @@ Riva ASR supports mono, 16-bit audio in WAV, OPUS, and FLAC formats. If you do n
 The NVIDIA API key is a unique identifier used to authenticate requests to NVIDIA's APIs, such as the NGC (NVIDIA GPU Cloud) services. This key allows developers to access various resources, including pre-trained models, GPU-accelerated software, and container images. Obtaining an API key typically involves creating an account on NVIDIA's developer portal and generating the key within the account settings. It is important to keep this key secure, as it grants access to your NVIDIA resources and can be used for billing purposes.
 
 1. **Go to [build.nvidia.com](https://build.nvidia.com)**
+   
+      >**Note:** If a cookie consent pop-up appears (e.g., "NVIDIA and our third-party partners use cookies..."), please click **Accept All** to proceed.
 
 1. **Login or Create an Account**:
 Click on the **Login** button in the top-right corner to create a new account. Enter your organization email to receive free credits for using NVIDIA NIM, and click **Next**.
 
    ![build.nvidia.com](../media/nvaie-1.png)
 
-   >**Note**: We recommend using your Email to log in, as this will provide you with 1,000 free credits. Alternatively, you can use the Username and Password available in the Environment tab to create an account. However, this option does not include free credits.
+   >**Note**: We recommend using your Email to log in, as this will provide you with 1,000 free credits. Alternatively, you can use the Username and Password available in the Environment tab to create an account. However, this option does not include free credits. 
+
+   
 
 1. **Create Your NVIDIA Account**:
 You will be redirected to a page where you can create your NVIDIA account. Provide your **Personal email address** **(1)** and then click on **Create (2)**.This account is required to download RIVA and start using it in your Azure platform.
@@ -63,7 +67,25 @@ In the next step, create your NGC account by providing your NVIDIA cloud account
 
 ### Success!
 
-You have successfully created your NVIDIA NVAIE and NVIDIA Cloud accounts. Verify that you are provided with 40 requests per minute (RPM) to try out RIVA.
+You have successfully created your NVIDIA NVAIE and NVIDIA Cloud accounts. 
+
+#### Verify Your Account to Get API Access
+
+To enable API access, you need to verify your account by following these steps:
+
+1. In the top right corner of the page, locate and click on the **Verify** option.
+
+   ![](../media/c2.task1.0.png)
+
+1. Type in your **Phone number (1)** and click on **Send Code via SMS (2)**
+
+   ![](../media/c2.task1.0.1.png)
+
+1. Once you receive the code on your phone, enter it in the **Provided field (1)** and click on **Verify(2)**
+
+   ![](../media/c2.task1.01.png)
+
+Now Verify that you are provided with 40 requests per minute (RPM) to try out RIVA.
 
    ![](../Scenario/Hackathon/media/nvaie-7-1.png)
 
@@ -90,15 +112,15 @@ You have successfully created your NVIDIA NVAIE and NVIDIA Cloud accounts. Verif
 
    ![](../media/i17.png)
 
-1. If you receive a pop-up for **Set Email Preferences For Your Services**, simply click on **Close**.
+1. When the **Terms of Use** prompt appears, check both boxes for *"I agree to the NVIDIA Privacy Policy"* and *"I agree to the NVIDIA AI Enterprise Terms of Use"*, then click **"Agree"**.
 
-   ![](../media/nvidia10.png)
+   ![](../media/c2.task1.3.png)
 
 1. Once your account is created or you have successfully logged in.
 
-1. You will see a pop-up. On the **Set Email Preferences For Your Services** page, you can either **close** it or click **Set Email Preferences** to receive updates regarding security, announcements, and maintenance for all your services.
+1. If you see a warning like **Update Email Preferences**, you can simply click **Close**, or navigate to **Go to Account Settings** to configure email notifications for your product services for this organization.
 
-   ![](../media/nv8.png)
+   ![](../media/c2.task1.4.png)
 
 1. In the search bar, look for **riva-asr** and select **Riva ASR NIM**. 
 
@@ -108,7 +130,7 @@ You have successfully created your NVIDIA NVAIE and NVIDIA Cloud accounts. Verif
 
    ![](../media/nv5.png)
 
-1. A pop-up will appear on the **Approval Required** page. Click **Join** for the **NVIDIA AI Enterprise Essentials**, and it will redirect you to the NVIDIA Developer Portal.
+1. A pop-up will appear on the **Approval Required** page. Click **Request Access** for the **NVIDIA AI Enterprise Essentials**, and it will redirect you to the NVIDIA Developer Portal.
 
    ![](../media/nv4.png)
 
@@ -132,15 +154,11 @@ You have successfully created your NVIDIA NVAIE and NVIDIA Cloud accounts. Verif
 
 1. Click on **Generate API Key** to create a new key to access the necessary services.
 
-   ![](../media/nvidia5.png)
+   ![](../media/genkey.png)
 
-1. From the top, click on **+ Generate API Key** to create a new API key.
+1. From the top, click on **+ Generate Personal Key** to create a new API key.
 
-   ![](../media/nvidia8.png)
-
-1. Click on **Confirm** to generate your new API key.
-
-   ![](../media/nvidia9.png)
+   ![](../media/c1.task1.02.png)
 
 1. In Generate Personal Key, fill in the following details and click on **Generate Personal Key** **(4)**.
 
@@ -180,7 +198,7 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
         - In the **MarketPlace**, search **NVIDIA GPU-Optimized VMI** **(1),** and in the **NVIDIA GPU-Optimized VMI,** click on **Select** **(2)** drop-down, and select **NVIDIA GPU-Optimized VMI - v24.10.1 - x64 Gen 2** **(3)** .
 
-            ![](../media/vmimageselect.png)
+            ![](../media/c2.task2.1.png)
 
     - **Size**: Click on **See all size** 
 
@@ -201,7 +219,7 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
 5. In the **Disks** tab, select the **OS disk size** from the drop-down **128 GiB** **(1)** and **OS disk type** as **Standard SSD (locally-redudant storage)** **(2)** and click on **Review + Create** **(3)**.
 
-    ![](../media/vmdisks.png)
+    ![](../media/c2.task2.2.png)
 
 6. In the **Review + Create** tab, click on **Create**.
 
@@ -211,19 +229,24 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
     ![](../media/select-deployed-vm.png)
 
-8. Expand the **Connect** **(1)** tab and click on **Connect** **(2).** Moving on, click on **Select** **(3)** under Native SSH. Check "Configure prerequisites for Native SSH" success status and proceed with step **(4),** copying the **SSH to VM with specified private key** under **Copy and execute SSH command** option.
+8. In order to connect to the Virtual machine copy the **Public IP Address.**
 
-    ![](../media/vmsshcopy.png)
+    ![](../media/Vm.png)
 
-    > **Note**: Paste the SSH endpoint in Notepad
+    > **Note**: Paste the Public IP Address in Notepad
 
 9. In the JumpVM, search for **cmd** **(1)** and select **Command Prompt** **(2)**
 
     ![](../media/select-cmd.png)
 
-10. Paste the recoded **SSH endpoint** **(1)** and hit the **Enter** button. In **Are you sure you want to continue Connection (yes/no/[fingerprint])?** enter **yes** **(1)**, hit **Enter** button, and write the **password** **(3).** Click on the **Enter** button again.
+10. To connect to your virtual machine, use the SSH command below. Replace Vmuser with the username you provided during the VM creation process, and replace <Public IP> with the public IP address copied in the previous step, and hit **Enter** button, enter the **password** Click on the **Enter** button again.
 
-    ![](../media/connectssh.png)
+      `ssh Vmuser@<Public IP>`
+
+      ![](../media/c2.task2.3.png)
+
+
+      >**Note:** If your prompted with **Are you sure you want to continue Connection (yes/no/[fingerprint])?** enter **yes**.
 
     > **Note**: Once you are connected to the virtual Machines, it takes 2-3 minutes to complete the setup process. Please wait till it gets completed.
 
@@ -238,9 +261,9 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
    ![](../media/exit.png)   
 
-2. Re-login into the VM by pasting the recorded **SSH endpoint** **(1).** Hit the **Enter** button and include the **password** **(2)**.
+2. Re-login into the VM by pasting the recorded **SSH command** . Hit the **Enter** button and include the **password**.
 
-   ![](../media/reconnect.png)
+   ![](../media/c2.task2.3.png)
 
 3. Run the following command to configure your NGC API Key:
 
@@ -262,27 +285,28 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
    
    ```bash
    # Set model selector
-   export NIM_TAGS_SELECTOR="name=parakeet-1-1b-ctc-riva-en-us,mode=all"
+   export CONTAINER_ID=parakeet-1-1b-ctc-en-us
+   export NIM_TAGS_SELECTOR="mode=all"
 
    # Run the container
-   docker run -it --rm --name=riva-asr \
-      --gpus '"device=0"' \
-      --shm-size=8GB \
-      -e NGC_API_KEY \
-      -e NIM_HTTP_API_PORT=9000 \
-      -e NIM_GRPC_API_PORT=50051 \
-      -p 9000:9000 \
-      -p 50051:50051 \
-      -e NIM_TAGS_SELECTOR \
-      nvcr.io/nim/nvidia/riva-asr:1.3.0
+   docker run -it --rm --name=$CONTAINER_ID \
+   --runtime=nvidia \
+   --gpus '"device=0"' \
+   --shm-size=8GB \
+   -e NGC_API_KEY \
+   -e NIM_HTTP_API_PORT=9000 \
+   -e NIM_GRPC_API_PORT=50051 \
+   -p 9000:9000 \
+   -p 50051:50051 \
+   -e NIM_TAGS_SELECTOR \
+   nvcr.io/nim/nvidia/$CONTAINER_ID:latest
    ```
-
    ![](../media/download-deploy-run.png)
 
    > **Note**: Please use the NGC keys provided below.
   
      ```
-     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
+     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
      ```
 
    > **Note**: Setting up the NVIDIA Riva model within the Docker Desktop environment can be a time-consuming process. Depending on factors such as network speed and system performance, the setup procedure may take as long as one hour to complete. Please be patient and allow sufficient time for the installation and configuration to finish. Minimize the tab and proceed with the next challenge while monitoring the configuration every 20 minutes.
