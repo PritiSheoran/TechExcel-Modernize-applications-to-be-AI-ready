@@ -23,7 +23,7 @@ Here is a simple overview of each service used:
    - Clone the GitHub repository `https://github.com/microsoft/TechExcel-Modernize-applications-to-be-AI-ready.git`, which contains hotel brochures, into your folder named **AssetsRepo**.
    - Upload the brochures to the storage container. The brochures are located in the local path:
 
-      `C:\Users\demouser\AssetsRepo\Assets\PDF` 
+      `TechExcel-Modernize-applications-to-be-AI-ready/Assets/PDFs` 
 
    - Create an **Azure AI Search Service** instance.
 
