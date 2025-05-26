@@ -41,8 +41,7 @@ Here is a simple overview of each service used:
    - Launch the **import and vectorize data** and connect to **Azure Blob Storage**.
    - Create an **Azure OpenAI Service** instance and deploy models to the instance.
    - Vectorize text from the brochures.
-   - Set the index name as brochures-vector
-   - Index the data.
+   - Index the data while setting the index name as "brochures-vector".
    - Test the index by searching for `skiing`. The results should list **skiing** data and contain a text vector.. 
 
      <validation step="932c0914-39fe-4f3b-b876-6d0169c84b56" />   
