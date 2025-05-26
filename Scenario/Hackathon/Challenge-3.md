@@ -23,34 +23,34 @@ To improve the app's scalability, Contoso plans to split the frontend components
      * Enter the following commands in PowerShell to copy frontend files:
 
          ```
-         cp startup.* C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend
-         cp uwsgi.ini C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend
-         cp Dockerfile C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend
-         cp *.docker* C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend
-         cp requirements.txt C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend
+         cp startup.* C:\temp\ContosoHotel\UpdatedApp\Frontend 
+         cp uwsgi.ini C:\temp\ContosoHotel\UpdatedApp\Frontend 
+         cp Dockerfile C:\temp\ContosoHotel\UpdatedApp\Frontend 
+         cp *.docker* C:\temp\ContosoHotel\UpdatedApp\Frontend
+         cp requirements.txt C:\temp\ContosoHotel\UpdatedApp\Frontend 
          ```
       * Enter the following commands in PowerShell to create a subfolder in the Frontend folder and copy all necessary files to the subfolder.
 
          ```
-         cp -r C:/Users/demouser/ContosoHotel/contoso_hotel/static C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend\contoso_hotel\static
-         cp -r C:/Users/demouser/ContosoHotel/contoso_hotel/templates C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend\contoso_hotel\
-         cp C:/Users/demouser/ContosoHotel/contoso_hotel/*.py C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend\contoso_hotel\
+         cp -r C:/temp/ContosoHotel/contoso_hotel/static C:\temp\ContosoHotel\UpdatedApp\Frontend\contoso_hotel\static 
+         cp -r C:/temp/ContosoHotel/contoso_hotel/templates C:\temp\ContosoHotel\UpdatedApp\Frontend\contoso_hotel\ 
+         cp C:/temp/ContosoHotel/contoso_hotel/*.py C:\temp\ContosoHotel\UpdatedApp\Frontend\contoso_hotel\ 
          ```
       * Enter the following commands in PowerShell to copy backend files:
 
          ``` 
-         cp *.sql C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend
-         cp startup.* C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend
-         cp uwsgi.ini C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend
-         cp *docker* C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend
-         cp requirements.txt C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend
+         cp *.sql C:\temp\ContosoHotel\UpdatedApp\Backend 
+         cp startup.* C:\temp\ContosoHotel\UpdatedApp\Backend 
+         cp uwsgi.ini C:\temp\ContosoHotel\UpdatedApp\Backend 
+         cp *docker* C:\temp\ContosoHotel\UpdatedApp\Backend 
+         cp requirements.txt C:\temp\ContosoHotel\UpdatedApp\Backend 
          ```
       * Enter the following commands in PowerShell to create a subfolder in the Frontend folder and copy all necessary files to the subfolder.
 
-         ```
-         cp -r C:/Users/demouser/ContosoHotel/contoso_hotel/dblayer C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend\contoso_hotel\dblayer
-         cp C:/Users/demouser/ContosoHotel/contoso_hotel/*.py C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend\contoso_hotel\ 
-         ```
+        ```
+        cp -r C:/temp/ContosoHotel/contoso_hotel/dblayer C:\temp\ContosoHotel\UpdatedApp\Backend\contoso_hotel\dblayer 
+        cp C:/temp/ContosoHotel/contoso_hotel/*.py C:\temp\ContosoHotel\UpdatedApp\Backend\contoso_hotel\ 
+        ```
 
 1. **Refactor Files:**
 
