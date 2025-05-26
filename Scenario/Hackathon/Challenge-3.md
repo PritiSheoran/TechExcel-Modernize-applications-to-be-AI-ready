@@ -69,18 +69,22 @@ To improve the app's scalability, Contoso plans to split the frontend components
 1. **Build the containers for frontend and backend components and push the containers to Azure:**   
 
    - Build separate containers for frontend and backend application components.
-   - Run the **az containerapp env create** cmdlet to create an ACR environment for the app.You can use the following command"
-   ```
-   $CONTOSO_HOTEL_ENV = "contosoenv$(Get-Random -Minimum 100000 -Maximum 999999)"
-   $CONTOSO_ACR_CREDENTIAL = az acr credential show --name $ACR_NAME --query "passwords[0].value" -o tsv
-   az containerapp env create --name "$CONTOSO_HOTEL_ENV" --resource-group "Appmod" --location "$AZURE_REGION"
-   Write-Host -ForegroundColor Green  "Default Domain is: $(az containerapp env show --name "$CONTOSO_HOTEL_ENV" --resource-group "Appmod" --query "properties.defaultDomain" -o tsv)"
-   ```
-   - Create container apps for frontend and backend components. 
+   - Run the **az containerapp env create** cmdlet to create an ACR environment for the app.You can use the following command:
 
+      ```
+      az containerapp env create --name "$CONTOSO_HOTEL_ENV" --resource-group "$RG" --location "$AZURE_REGION"
+      ```
+   - Create container apps for the frontend and backend components, you can use the following command to create each container app:
+
+      ```
+      az containerapp create --name "backend" --resource-group "$RG" --environment "$CONTOSO_HOTEL_ENV" --image "$ACR_NAME.azurecr.io/pycontosohotel-backend:v1.0.0" --target-port 8000 --ingress external --transport http --registry-server "$ACR_NAME.azurecr.io" --registry-username "$ACR_NAME" --registry-password "$CONTOSO_ACR_CREDENTIAL" --env-vars POSTGRES_CONNECTION_STRING="ENTER_CONNECTION_STRING_FROM_CHALLENGE02_TASK04"
+      ```
       
+      ```
+      az containerapp create --name "frontend" --resource-group "$RG" --environment "$CONTOSO_HOTEL_ENV" --image "$ACR_NAME.azurecr.io/pycontosohotel-frontend:v1.0.0" --target-port 8000 --ingress external --transport http --registry-server "$ACR_NAME.azurecr.io" --registry-username "$ACR_NAME" --registry-password "$CONTOSO_ACR_CREDENTIAL" --env-vars "API_BASEURL=$CONTOSO_BACKEND_URL"    
+      ```
 
-   - Run the **az containerapp ingress cors** command to manage Cross-Origin Resource Sharing (CORS) policies for the container apps.
+   - Configure the CORS policy by navigating to the backend container app in the Azure portal, updating the allowed origins to include the frontend URL, and setting allowed methods to a wildcard (*), to manage Cross-Origin Resource Sharing (CORS) policies and enable secure communication between your frontend and backend container apps.
 
      <validation step="207cf525-c031-4b78-87e0-309f7f9f3b25" />   
 

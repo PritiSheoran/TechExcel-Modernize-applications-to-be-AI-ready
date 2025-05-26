@@ -19,6 +19,8 @@ Riva ASR supports mono, 16-bit audio in WAV, OPUS, and FLAC formats. If you do n
 The NVIDIA API key is a unique identifier used to authenticate requests to NVIDIA's APIs, such as the NGC (NVIDIA GPU Cloud) services. This key allows developers to access various resources, including pre-trained models, GPU-accelerated software, and container images. Obtaining an API key typically involves creating an account on NVIDIA's developer portal and generating the key within the account settings. It is important to keep this key secure, as it grants access to your NVIDIA resources and can be used for billing purposes.
 
 1. **Go to [build.nvidia.com](https://build.nvidia.com)**
+   
+      >**Note:** If a cookie consent pop-up appears (e.g., "NVIDIA and our third-party partners use cookies..."), please click **Accept All** to proceed.
 
 1. **Login or Create an Account**:
 Click on the **Login** button in the top-right corner to create a new account. Enter your organization email to receive free credits for using NVIDIA NIM, and click **Next**.
@@ -110,15 +112,15 @@ Now Verify that you are provided with 40 requests per minute (RPM) to try out RI
 
    ![](../media/i17.png)
 
-1. If you receive a pop-up for **Set Email Preferences For Your Services**, simply click on **Close**.
+1. When the **Terms of Use** prompt appears, check both boxes for *"I agree to the NVIDIA Privacy Policy"* and *"I agree to the NVIDIA AI Enterprise Terms of Use"*, then click **"Agree"**.
 
-   ![](../media/nvidia10.png)
+   ![](../media/c2.task1.3.png)
 
 1. Once your account is created or you have successfully logged in.
 
-1. You will see a pop-up. On the **Set Email Preferences For Your Services** page, you can either **close** it or click **Set Email Preferences** to receive updates regarding security, announcements, and maintenance for all your services.
+1. If you see a warning like **Update Email Preferences**, you can simply click **Close**, or navigate to **Go to Account Settings** to configure email notifications for your product services for this organization.
 
-   ![](../media/nv8.png)
+   ![](../media/c2.task1.4.png)
 
 1. In the search bar, look for **riva-asr** and select **Riva ASR NIM**. 
 
@@ -128,7 +130,7 @@ Now Verify that you are provided with 40 requests per minute (RPM) to try out RI
 
    ![](../media/nv5.png)
 
-1. A pop-up will appear on the **Approval Required** page. Click **Join** for the **NVIDIA AI Enterprise Essentials**, and it will redirect you to the NVIDIA Developer Portal.
+1. A pop-up will appear on the **Approval Required** page. Click **Request Access** for the **NVIDIA AI Enterprise Essentials**, and it will redirect you to the NVIDIA Developer Portal.
 
    ![](../media/nv4.png)
 
@@ -152,15 +154,11 @@ Now Verify that you are provided with 40 requests per minute (RPM) to try out RI
 
 1. Click on **Generate API Key** to create a new key to access the necessary services.
 
-   ![](../media/nvidia5.png)
+   ![](../media/genkey.png)
 
-1. From the top, click on **+ Generate API Key** to create a new API key.
+1. From the top, click on **+ Generate Personal Key** to create a new API key.
 
-   ![](../media/nvidia8.png)
-
-1. Click on **Confirm** to generate your new API key.
-
-   ![](../media/nvidia9.png)
+   ![](../media/c1.task1.02.png)
 
 1. In Generate Personal Key, fill in the following details and click on **Generate Personal Key** **(4)**.
 
@@ -241,14 +239,14 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
     ![](../media/select-cmd.png)
 
-10. To connect to your virtual machine, use the SSH command below. Replace Vmuser with the username you provided during the VM creation process, and replace <Public IP> with the public IP address copied in the previous step, and hit **Enter** button,write the **password** Click on the **Enter** button again.
+10. To connect to your virtual machine, use the SSH command below. Replace Vmuser with the username you provided during the VM creation process, and replace <Public IP> with the public IP address copied in the previous step, and hit **Enter** button, enter the **password** Click on the **Enter** button again.
 
       `ssh Vmuser@<Public IP>`
 
       ![](../media/c2.task2.3.png)
 
 
-      >**Note:** If your prompted with **Are you sure you want to continue Connection (yes/no/[fingerprint])?** enter **yes** **(1)**
+      >**Note:** If your prompted with **Are you sure you want to continue Connection (yes/no/[fingerprint])?** enter **yes**.
 
     > **Note**: Once you are connected to the virtual Machines, it takes 2-3 minutes to complete the setup process. Please wait till it gets completed.
 
@@ -263,9 +261,9 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
    ![](../media/exit.png)   
 
-2. Re-login into the VM by pasting the recorded **SSH endpoint** **(1).** Hit the **Enter** button and include the **password** **(2)**.
+2. Re-login into the VM by pasting the recorded **SSH command** . Hit the **Enter** button and include the **password**.
 
-   ![](../media/reconnect.png)
+   ![](../media/c2.task2.3.png)
 
 3. Run the following command to configure your NGC API Key:
 

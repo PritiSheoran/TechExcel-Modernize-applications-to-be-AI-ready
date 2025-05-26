@@ -30,9 +30,11 @@ Here is a simple overview of each service used:
 1. **Configure Managed Identities for Deployed Azure Resources:**  
 
    - Configure the **Azure OpenAI** and **Azure AI Search** instances to use **system-assigned managed identities**.
-   - Configure a managed identity to allow the **Azure AI Search** and **Azure OpenAI** instances to access the **Azure Blob Storage** account.
-   - Configure a managed identity to allow the **Azure AI Search** instance to access the **Azure OpenAI Service** instance.
-   - Configure a managed identity to allow the **Azure OpenAI Service** instance to access the **Azure AI Search** instance.
+   - Based on the commands, here's a revised and professional version of the statement including the specific role:
+   - **Configure a managed identity** to allow the Azure AI Search and Azure OpenAI instances to access the Azure Blob Storage account by assigning the **Storage Blob Data Contributor** role to their respective identities.
+   - **Configure a managed identity** to allow the Azure AI Search instance to access the Azure OpenAI Service instance by assigning the **Cognitive Services OpenAI Contributor** role to the Search service's managed identity.
+   - **Configure a managed identity** to allow the Azure OpenAI Service instance to access the Azure AI Search instance by assigning the **Search Index Data Contributor**, **Search Index Data Reader**, and **Search Service Contributor** roles to the OpenAI service’s managed identity.
+
 
 1. **Configure Azure AI Search to extract data from the brochures and test the search index:**
 

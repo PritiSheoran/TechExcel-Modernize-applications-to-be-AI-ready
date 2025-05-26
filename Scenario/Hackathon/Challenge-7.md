@@ -29,13 +29,13 @@ Riva ASR supports mono, 16-bit audio in WAV, OPUS, and FLAC formats. If you do n
 
       ![](media/nvaie-7-1.png) 
    
-   -  Navigate to [Nvidia](https://ngc.nvidia.com/signin) account using your credentials to proceed and Click on the **join**.
+   -  Navigate to [Nvidia](https://ngc.nvidia.com/signin) account using your credentials to proceed and Click on the **Continue**.
 
    - Once your account is created or you've successfully logged in.
 
-   - You will see a pop-up. On the **Set Email Preferences For Your Services** page, you can either close it or click **Set Email Preferences** to receive updates regarding security, announcements, and maintenance for all your services.
+   - If you see a warning like **Update Email Preferences**, you can simply click **Close**, or navigate to **Go to Account Settings** to configure email notifications for your product services for this organization.
 
-      ![](../../media/nv8.png)
+      ![](../../media/c2.task1.4.png)
 
    - In the search bar, look for **Riva ASR NIM**.
 
@@ -47,7 +47,7 @@ Riva ASR supports mono, 16-bit audio in WAV, OPUS, and FLAC formats. If you do n
 
       ![](media/nv5.png)
 
-   - A pop-up will appear on the **Approval Required** page. Click on **Join** for the **NVIDIA AI Enterprise Essentials**, which will redirect you to the NVIDIA Developer Portal.
+   - A pop-up will appear on the **Approval Required** page. Click on **Request Access** for the **NVIDIA AI Enterprise Essentials**, which will redirect you to the NVIDIA Developer Portal.
 
       ![](../../media/nv4.png)
 
@@ -69,11 +69,7 @@ Riva ASR supports mono, 16-bit audio in WAV, OPUS, and FLAC formats. If you do n
 
    - From the top, click on **+ Generate API Key** to create a new API key.
 
-      ![](../../media/nvidia8.png)
-
-   - Click on **Confirm** to generate your new API key.
-
-      ![](../../media/nvidia9.png)
+      ![](../../media/genkey.png)
 
    - Generate Personal Key: Grant your key permission to access or download containers and artifacts from the NGC Catalog.
 
@@ -114,26 +110,28 @@ Riva ASR supports mono, 16-bit audio in WAV, OPUS, and FLAC formats. If you do n
       > **Note**: Please use any one of the NGC keys provided below.
   
         ```
-        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
+        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
         ```
 
    - Run the NVIDIA Riva ASR Container:
       
       ```bash
       # Set model selector
-      export NIM_TAGS_SELECTOR="name=parakeet-1-1b-ctc-riva-en-us,mode=all"
+      export CONTAINER_ID=parakeet-1-1b-ctc-en-us
+      export NIM_TAGS_SELECTOR="mode=all"
 
       # Run the container
-      docker run -it --rm --name=riva-asr \
-         --gpus '"device=0"' \
-         --shm-size=8GB \
-         -e NGC_API_KEY \
-         -e NIM_HTTP_API_PORT=9000 \
-         -e NIM_GRPC_API_PORT=50051 \
-         -p 9000:9000 \
-         -p 50051:50051 \
-         -e NIM_TAGS_SELECTOR \
-         nvcr.io/nim/nvidia/riva-asr:1.3.0
+      docker run -it --rm --name=$CONTAINER_ID \
+      --runtime=nvidia \
+      --gpus '"device=0"' \
+      --shm-size=8GB \
+      -e NGC_API_KEY \
+      -e NIM_HTTP_API_PORT=9000 \
+      -e NIM_GRPC_API_PORT=50051 \
+      -p 9000:9000 \
+      -p 50051:50051 \
+      -e NIM_TAGS_SELECTOR \
+      nvcr.io/nim/nvidia/$CONTAINER_ID:latest
       ```
 
      > **Note**: Setting up the NVIDIA Riva model within the Docker Desktop environment can be a time-consuming process. Depending on factors such as network speed and system performance, the setup procedure may take as long as one hour to complete. Please be patient and allow sufficient time for the installation and configuration to finish. Minimize the tab and proceed with the next challenge while monitoring the configuration every 20 minutes.
