@@ -31,14 +31,14 @@ To improve the app's scalability, Contoso plans to split the frontend components
         ```
       * Enter the following commands in PowerShell to create a subfolder in the Frontend folder and copy all necessary files to the subfolder.
   
-       ```
-       cp -r C:/Users/demouser/ContosoHotel/contoso_hotel/static          
-       C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend\contoso_hotel\static
-       cp -r C:/Users/demouser/ContosoHotel/contoso_hotel/templates 
-       C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend\contoso_hotel\
-       cp C:/Users/demouser/ContosoHotel/contoso_hotel/*.py 
-       C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend\contoso_hotel\ 
-      ```
+        ```
+          cp -r C:/Users/demouser/ContosoHotel/contoso_hotel/static          
+          C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend\contoso_hotel\static
+          cp -r C:/Users/demouser/ContosoHotel/contoso_hotel/templates 
+          C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend\contoso_hotel\
+          cp C:/Users/demouser/ContosoHotel/contoso_hotel/*.py 
+          C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend\contoso_hotel\ 
+        ```
        
       * Enter the following commands in PowerShell to copy backend files:
 
