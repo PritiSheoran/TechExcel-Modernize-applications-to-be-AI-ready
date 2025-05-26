@@ -1,4 +1,4 @@
-> **Note**: Before continuing, please ensure you have submitted the survey form using the link provided [Survey link](https://forms.office.com/r/pPKvR8uz4V)
+> **Note**: We'd love to hear your thoughts! Before moving on to the next challenges, please take a moment to complete the [Lab Survey](https://forms.office.com/r/pPKvR8uz4V). Your feedback is valuable and helps us enhance future lab experiences. Thank you for your time!
 
 # Challenge 03: Deploy and Review the Legacy Contoso Hotel App
 ### Estimated Time: 45 Minutes
