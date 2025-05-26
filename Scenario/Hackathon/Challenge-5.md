@@ -40,7 +40,7 @@ Here is a simple overview of each service used:
 1. **Import and Configure a Flow:** 
 
    - Create a new project named **contosopf** on the AI Hub.
-   - Navigate to **Prompt Flow** and create a new **Chat** flow by uploading the **chatflow-oai-datasources.zip** file.
+   - Navigate to Prompt Flow and create a new Chat flow by uploading the **chatflow-oai-datasources.zip** file, which is          located inside the **AssetsRepo/Assets** folder.
    - Import a pre-built flow into the project. 
    - Add a new connection to the external assets using **Custom keys** and **Azure AI Search**.
    - For the OpenAI service that was created during the AI Hub setup, deploy the **GPT-4o** model

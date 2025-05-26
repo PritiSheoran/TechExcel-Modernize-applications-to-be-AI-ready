@@ -15,42 +15,48 @@ To improve the app's scalability, Contoso plans to split the frontend components
    - Create a folder named **UpdatedApp** with subfolders **Frontend** and **Backend**. Run the following commands in PowerShell to create the necessary directory structure under the ContosoHotel folder:
 
       ```
-      mkdir -p C:\temp\ContosoHotel\UpdatedApp\Frontend
-      mkdir -p C:\temp\ContosoHotel\UpdatedApp\Backend
+      mkdir -p ContosoHotel/UpdatedApp/Frontend 
+      mkdir -p ContosoHotel/UpdatedApp/Frontend 
       ```
 
    - Copy all frontend files to the **Frontend** folder and all backend files to the **Backend** folder. 
      * Enter the following commands in PowerShell to copy frontend files:
 
-         ```
-         cp startup.* C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend
-         cp uwsgi.ini C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend
-         cp Dockerfile C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend
-         cp *.docker* C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend
-         cp requirements.txt C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend
-         ```
+        ```
+        cp startup.* C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend
+        cp uwsgi.ini C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend
+        cp Dockerfile C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend
+        cp *.docker* C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend
+        cp requirements.txt C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend
+        ```
       * Enter the following commands in PowerShell to create a subfolder in the Frontend folder and copy all necessary files to the subfolder.
-
-         ```
-         cp -r C:/Users/demouser/ContosoHotel/contoso_hotel/static C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend\contoso_hotel\static
-         cp -r C:/Users/demouser/ContosoHotel/contoso_hotel/templates C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend\contoso_hotel\
-         cp C:/Users/demouser/ContosoHotel/contoso_hotel/*.py C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend\contoso_hotel\
-         ```
+  
+        ```
+          cp -r C:/Users/demouser/ContosoHotel/contoso_hotel/static          
+          C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend\contoso_hotel\static
+          cp -r C:/Users/demouser/ContosoHotel/contoso_hotel/templates 
+          C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend\contoso_hotel\
+          cp C:/Users/demouser/ContosoHotel/contoso_hotel/*.py 
+          C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend\contoso_hotel\ 
+        ```
+       
       * Enter the following commands in PowerShell to copy backend files:
 
          ``` 
-         cp *.sql C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend
-         cp startup.* C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend
-         cp uwsgi.ini C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend
-         cp *docker* C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend
-         cp requirements.txt C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend
-         ```
-      * Enter the following commands in PowerShell to create a subfolder in the Frontend folder and copy all necessary files to the subfolder.
+        cp *.sql C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend
+        cp startup.* C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend
+        cp uwsgi.ini C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend
+        cp *docker* C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend
+        cp requirements.txt C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend   
+        ```
+      * Enter the following commands in PowerShell to create a subfolder in the Backend folder and copy all necessary files to the subfolder.
 
-         ```
-         cp -r C:/Users/demouser/ContosoHotel/contoso_hotel/dblayer C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend\contoso_hotel\dblayer
-         cp C:/Users/demouser/ContosoHotel/contoso_hotel/*.py C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend\contoso_hotel\ 
-         ```
+        ```
+        cp -r C:/Users/demouser/ContosoHotel/contoso_hotel/dblayer 
+        C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend\contoso_hotel\dblayer
+        cp C:/Users/demouser/ContosoHotel/contoso_hotel/*.py 
+        C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend\contoso_hotel\ 
+        ```
 
 1. **Refactor Files:**
 
@@ -84,7 +90,7 @@ To improve the app's scalability, Contoso plans to split the frontend components
       az containerapp create --name "frontend" --resource-group "$RG" --environment "$CONTOSO_HOTEL_ENV" --image "$ACR_NAME.azurecr.io/pycontosohotel-frontend:v1.0.0" --target-port 8000 --ingress external --transport http --registry-server "$ACR_NAME.azurecr.io" --registry-username "$ACR_NAME" --registry-password "$CONTOSO_ACR_CREDENTIAL" --env-vars "API_BASEURL=$CONTOSO_BACKEND_URL"    
       ```
 
-   - Configure the CORS policy by navigating to the backend container app in the Azure portal, updating the allowed origins to include the frontend URL, and setting allowed methods to a wildcard (*), to manage Cross-Origin Resource Sharing (CORS) policies and enable secure communication between your frontend and backend container apps.
+   - Run the az containerapp ingress cors command to manage Cross-Origin Resource Sharing (CORS) policies for the container apps.
 
      <validation step="207cf525-c031-4b78-87e0-309f7f9f3b25" />   
 
