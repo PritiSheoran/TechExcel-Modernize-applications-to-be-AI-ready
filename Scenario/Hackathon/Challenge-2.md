@@ -21,19 +21,19 @@ Here's a simple overview of each service used by the app:
    - Clone the repository within Visual Studio Code: `https://github.com/qxsch/ContosoHotel.git`.
      > **Hint**: You can utilize the following repository, https://github.com/qxsch/ContosoHotel.git, to explore and perform the scenarios listed below.   
 
-1. **Build a Docker Container for the App:**
+2. **Build a Docker Container for the App:**
 
    - Launch Docker Desktop. Verify that the Docker engine is running.   
    - Builds the container for the app within the **ContosoHotel** folder, where the cloned repository resides.
 
-1. **Create an Azure Container Registry (ACR) Instance and Push the App Container to ACR:**
+3. **Create an Azure Container Registry (ACR) Instance and Push the App Container to ACR:**
 
    - Create an ACR instance with a basic SKU within the **Appmod** resource group inside the **ContosoHotel** folder.
    - Sign in to ACR. Create a Docker tag for the app and then push the app container to ACR.
 
      <validation step="f093ed04-190b-4416-bd7a-59a113e42a4e" />   
 
-1. **Provision a PostgreSQL Database to Support the App:**   
+4. **Provision a PostgreSQL Database to Support the App:**   
 
    - Run the **Connect-AzAccount** cmdlet to connect Visual Studio Code to Azure with an authenticated account.
    - Run the **manageIac.ps1** script from the **ContosoHotel\iac** folder to deploy an Azure Database for PostgreSQL Flexible Server instance. Use the following command, ensuring you replace "REPLACE_WITH_REGION_YOU_SELECTED_IN_CHALLENGE1" with the same region selected in Challenge 1:
@@ -46,7 +46,7 @@ Here's a simple overview of each service used by the app:
 
      <validation step="86139f4d-d94b-44f4-aef0-be0923be574f" />   
 
-1. **Run the Containerized App and Add a Booking:**
+5. **Run the Containerized App and Add a Booking:**
 
    - Run the containerized app on port 8000.
    - Paste the following URL `http://localhost:8000/setup` in a web browser.

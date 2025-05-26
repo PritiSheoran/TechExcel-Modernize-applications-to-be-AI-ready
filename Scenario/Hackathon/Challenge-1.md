@@ -56,8 +56,9 @@ Make sure you have the following from the CloudLabs-provided integrated environm
    - Please ensure the Azure OpenAI Service name follows this format: **OpenAI-xxxxxx**, where xxxxxx should be replaced with your specific **Deployment ID**.    
 
       <validation step="	e958ee57-1b51-469f-86a0-44889bee9648"/>
+      
 
-1. **Deploy Large Language Models (LLM):**
+2. **Deploy Large Language Models (LLM):**
    
    - Azure OpenAI provides a web-based portal named **Azure OpenAI Studio** that you can use to deploy, manage, and explore models. You'll start your exploration of Azure OpenAI by using Azure OpenAI Studio to deploy a model.
    - Launch Azure OpenAI Studio from the overview pane and deploy two OpenAI models, i.e., `GPT-4o ', and `text-embedding-ada-002` with a TPM capacity of 20k.   

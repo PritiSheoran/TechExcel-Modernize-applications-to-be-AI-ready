@@ -160,10 +160,9 @@ In this task, you will import a pre-built flow, configure flow settings, and the
 
     ![](../media/challenge6.task18.png)
 
-
 1. Scroll down and click on **+ New project** on the Hub Overview. 
 
-    ![](../media/challenge6.task19.png)
+    ![](../media/project.png)
 
 1. Provide the project name as **contosopf (1),** then click on **Create (2)**.
 
@@ -303,7 +302,6 @@ In this task, you will import a pre-built flow, configure flow settings, and the
 
     ![](../media/h199.png)
 
-
 1. In the left navigation pane for the flow, in the **My assets** section, select **Model + endpoints (1)** , and then select the **+ Deploy Model (2)** drop-down. Next, choose **Deploy Base Model (3)**. 
 
      ![](../media/challenge6.task29.png)
@@ -329,15 +327,16 @@ In this task, you will import a pre-built flow, configure flow settings, and the
       ![](../media/challenge6.task31.png)
 
 1. In the left navigation pane for the flow, in the **Build and customize** section, select **Prompt flow.** 
-    ![](../media/challenge6.task24.png)
+
+     ![](../media/challenge6.task24.png)
 
 1. Select **Start compute session**. This allows you to run and test the chatbot.    
 
-    ![](../media/challenge6.task25.png)
+    ![](../media/startsession.png)
 
 1. Locate the **check_question_intent** tile. Click on the  **Connection (1)** field drop-down, and select the connection that displays **(2)**.
 
-    ![](../media/challenge6.task26.png)
+    ![](../media/flow.png)
 
 1. Scroll down to the **chat_with_data** tile and under the **Inputs** section.   
 
