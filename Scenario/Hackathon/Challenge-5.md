@@ -26,7 +26,12 @@ Here is a simple overview of each service used:
       psql
       ```   
    - Create a user for the **PostgreSQL database** that allows the chatbot read-only access to the Hotels, Visitors, and Bookings tables.
-   -  Grant the user access to the database tables with the following commands:
+
+     ```
+     CREATE USER promptflow WITH PASSWORD '1234ABCD!';
+     ```
+
+   - Grant the user access to the database tables with the following commands:
       ```
       GRANT SELECT ON TABLE hotels TO promptflow;
       GRANT SELECT ON TABLE bookings TO promptflow;
@@ -103,7 +108,7 @@ Here is a simple overview of each service used:
 ## Success Criteria:
 
 - You have successfully created a user in the PostgreSQL database.
-- You have created a new AI Studio Hub and created a project.
+- You have created a new Azure AI Hub and created a project.
 - You have imported and configured a pre-built flow.
 - You have tested the flow and confirmed that it returns appropriate results.
 - Configure the necessary network security group rules to allow external access.
