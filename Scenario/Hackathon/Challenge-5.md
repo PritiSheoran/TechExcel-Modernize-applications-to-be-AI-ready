@@ -6,7 +6,7 @@ There are a lot of ways to create a chatbot. For this challenge, you will use Pr
 
 Here is a simple overview of each service used:
 
-- An **Azure AI Studio Hub** is a central resource within Azure AI Studio that helps teams manage, collaborate, and organize their AI projects.
+- An **Azure AI Hub** is a central resource within Azure AI Studio that helps teams manage, collaborate, and organize their AI projects.
 - A **flow** encapsulates the logic that tells the chatbot what it can do and how to do things. Creating a flow can be complicated. For this challenge, you will use a pre-built flow. The flow uses the OpenAI API to query the Azure Search Index directly.
 
 ## Challenge Objectives:
