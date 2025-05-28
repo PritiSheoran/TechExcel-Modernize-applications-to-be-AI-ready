@@ -16,7 +16,7 @@ To improve the app's scalability, Contoso plans to split the frontend components
 
       ```
       mkdir -p ContosoHotel/UpdatedApp/Frontend 
-      mkdir -p ContosoHotel/UpdatedApp/Frontend 
+      mkdir -p ContosoHotel/UpdatedApp/Backend
       ```
 
    - Copy all frontend files to the **Frontend** folder and all backend files to the **Backend** folder. 
@@ -29,15 +29,13 @@ To improve the app's scalability, Contoso plans to split the frontend components
         cp *.docker* C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend
         cp requirements.txt C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend
         ```
+      
       * Enter the following commands in PowerShell to create a subfolder in the Frontend folder and copy all necessary files to the subfolder.
   
         ```
-          cp -r C:/Users/demouser/ContosoHotel/contoso_hotel/static          
-          C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend\contoso_hotel\static
-          cp -r C:/Users/demouser/ContosoHotel/contoso_hotel/templates 
-          C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend\contoso_hotel\
-          cp C:/Users/demouser/ContosoHotel/contoso_hotel/*.py 
-          C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend\contoso_hotel\ 
+        cp -r C:/Users/demouser/ContosoHotel/contoso_hotel/static C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend\contoso_hotel\static
+        cp -r C:/Users/demouser/ContosoHotel/contoso_hotel/templates C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend\contoso_hotel\
+        cp C:/Users/demouser/ContosoHotel/contoso_hotel/*.py C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Frontend\contoso_hotel\
         ```
        
       * Enter the following commands in PowerShell to copy backend files:
@@ -49,13 +47,12 @@ To improve the app's scalability, Contoso plans to split the frontend components
         cp *docker* C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend
         cp requirements.txt C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend   
         ```
+      
       * Enter the following commands in PowerShell to create a subfolder in the Backend folder and copy all necessary files to the subfolder.
 
         ```
-        cp -r C:/Users/demouser/ContosoHotel/contoso_hotel/dblayer 
-        C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend\contoso_hotel\dblayer
-        cp C:/Users/demouser/ContosoHotel/contoso_hotel/*.py 
-        C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend\contoso_hotel\ 
+        cp -r C:/Users/demouser/ContosoHotel/contoso_hotel/dblayer C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend\contoso_hotel\dblayer
+        cp C:/Users/demouser/ContosoHotel/contoso_hotel/*.py C:\Users\demouser\ContosoHotel\ContosoHotel\UpdatedApp\Backend\contoso_hotel\ 
         ```
 
 1. **Refactor Files:**
