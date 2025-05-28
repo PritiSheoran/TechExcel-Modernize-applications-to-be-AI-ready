@@ -1,3 +1,5 @@
+### Note: Please complete this brief survey before proceeding to the next challenge. [Survey Form](https://forms.office.com/r/pPKvR8uz4V)
+
 # Challenge 03: Deploy and Review the Legacy Contoso Hotel App
 ### Estimated Time: 45 Minutes
 ## Introduction
