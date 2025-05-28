@@ -6,7 +6,7 @@ There are a lot of ways to create a chatbot. For this challenge, you will use pr
 
 Here's a simple overview of each service used:
 
-- An **Azure AI Studio Hub** is a central resource within Azure AI Studio that helps teams manage, collaborate, and organize their AI projects.
+- An **Azure AI Hub** is a central resource within Azure AI Studio that helps teams manage, collaborate, and organize their AI projects.
 - A **flow** encapsulates the logic that tells the chatbot what it can do and how to do things. Creating a flow can be complicated. For this challenge, you will use a pre-built flow. The flow uses the OpenAI API to directly query the Azure Search index.
 
 ## Solution Guide
@@ -675,7 +675,7 @@ In this task, you will import a pre-built flow, configure flow settings, and the
 ## Success Criteria:
 
 - You have successfully created a user in the PostgreSQL database.
-- You have created a new AI Studio Hub and created a project.
+- You have created a new Azure AI Hub and created a project.
 - You have imported and configured a pre-built flow.
 - You have tested the flow and confirmed that the flow returns appropriate results.
 - Configured the necessary network security group rules to allow external access.
