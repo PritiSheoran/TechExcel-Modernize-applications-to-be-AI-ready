@@ -297,8 +297,8 @@ In this task, you will build separate containers for frontend and backend compon
    ```
    $CONTOSO_HOTEL_ENV = "contosoenv$(Get-Random -Minimum 100000 -Maximum 999999)"
    $CONTOSO_ACR_CREDENTIAL = az acr credential show --name $ACR_NAME --query "passwords[0].value" -o tsv
-   az containerapp env create --name "$CONTOSO_HOTEL_ENV" --resource-group "Appmod" --location "$AZURE_REGION"
-   Write-Host -ForegroundColor Green  "Default Domain is: $(az containerapp env show --name "$CONTOSO_HOTEL_ENV" --resource-group "Appmod" --query "properties.defaultDomain" -o tsv)"
+   az containerapp env create --name "$CONTOSO_HOTEL_ENV" --resource-group "ODL-app-hack-xxxxxxx-Appmod" --location "$AZURE_REGION"
+   Write-Host -ForegroundColor Green  "Default Domain is: $(az containerapp env show --name "$CONTOSO_HOTEL_ENV" --resource-group "ODL-app-hack-xxxxxxx-Appmod" --query "properties.defaultDomain" -o tsv)"
    ```
 
     ![](../media/h113.png) 
@@ -308,8 +308,8 @@ In this task, you will build separate containers for frontend and backend compon
 1. Replace the **ENTER_CONNECTION_STRING_FROM_CHALLENGE03_TASK04** placeholder text in the following command with the connection string you recorded in *Challenge 03 Task 04*. Enter the command at the Visual Studio Code Terminal window prompt and then select **Enter** after the last command. These commands create the container app for the backend app components.
 
    ```
-   az containerapp create --name "backend" --resource-group "Appmod" --environment "$CONTOSO_HOTEL_ENV" --image "$ACR_NAME.azurecr.io/pycontosohotel-backend:v1.0.0" --target-port 8000 --ingress external --transport http --registry-server "$ACR_NAME.azurecr.io" --registry-username "$ACR_NAME" --registry-password "$CONTOSO_ACR_CREDENTIAL" --env-vars POSTGRES_CONNECTION_STRING="ENTER_CONNECTION_STRING_FROM_CHALLENGE03_TASK04"
-   $CONTOSO_BACKEND_URL = "https://$(az containerapp show --name "backend" --resource-group "Appmod" --query 'properties.configuration.ingress.fqdn' -o tsv)"
+   az containerapp create --name "backend" --resource-group "ODL-app-hack-xxxxxxx-Appmod" --environment "$CONTOSO_HOTEL_ENV" --image "$ACR_NAME.azurecr.io/pycontosohotel-backend:v1.0.0" --target-port 8000 --ingress external --transport http --registry-server "$ACR_NAME.azurecr.io" --registry-username "$ACR_NAME" --registry-password "$CONTOSO_ACR_CREDENTIAL" --env-vars POSTGRES_CONNECTION_STRING="ENTER_CONNECTION_STRING_FROM_CHALLENGE03_TASK04"
+   $CONTOSO_BACKEND_URL = "https://$(az containerapp show --name "backend" --resource-group "ODL-app-hack-xxxxxxx-Appmod" --query 'properties.configuration.ingress.fqdn' -o tsv)"
    Write-Host -ForegroundColor Green  "Backend URL is: $CONTOSO_BACKEND_URL"
    ```
 
@@ -318,8 +318,8 @@ In this task, you will build separate containers for frontend and backend compon
 1. Enter the following commands at the Terminal window prompt and press **Enter** after the last command. These commands create the **container app** for the **frontend** app components.
 
    ```
-   az containerapp create --name "frontend" --resource-group "Appmod" --environment "$CONTOSO_HOTEL_ENV" --image "$ACR_NAME.azurecr.io/pycontosohotel-frontend:v1.0.0" --target-port 8000 --ingress external --transport http --registry-server "$ACR_NAME.azurecr.io" --registry-username "$ACR_NAME" --registry-password "$CONTOSO_ACR_CREDENTIAL" --env-vars "API_BASEURL=$CONTOSO_BACKEND_URL"
-   $CONTOSO_FRONTEND_URL = "https://$(az containerapp show --name "frontend" --resource-group "Appmod" --query 'properties.configuration.ingress.fqdn' -o tsv)"
+   az containerapp create --name "frontend" --resource-group "ODL-app-hack-xxxxxxx-Appmod" --environment "$CONTOSO_HOTEL_ENV" --image "$ACR_NAME.azurecr.io/pycontosohotel-frontend:v1.0.0" --target-port 8000 --ingress external --transport http --registry-server "$ACR_NAME.azurecr.io" --registry-username "$ACR_NAME" --registry-password "$CONTOSO_ACR_CREDENTIAL" --env-vars "API_BASEURL=$CONTOSO_BACKEND_URL"
+   $CONTOSO_FRONTEND_URL = "https://$(az containerapp show --name "frontend" --resource-group "ODL-app-hack-xxxxxxx-Appmod" --query 'properties.configuration.ingress.fqdn' -o tsv)"
    Write-Host -ForegroundColor Green  "Frontend URL is: $CONTOSO_FRONTEND_URL"
    ```
 
@@ -331,15 +331,15 @@ In this task, you will build separate containers for frontend and backend compon
 
 1. In the top search bar, search for **Resource groups (1)** and select **Resource groups (2)** from the services.
 
-    ![](../media/h116.png) 
+    ![](../media/Ch4-9.png) 
 
-1. Select the **Appmod** resource group.
+1. Select the **ODL-app-hack-xxxxxxx-Appmod** resource group.
 
-    ![](../media/h117.png) 
+    ![](../media/Ch4-10.png) 
 
 1. Select the **backend** container app.    
 
-    ![](../media/h118.png) 
+    ![](../media/Ch4-11.png) 
 
 1. In the left navigation pane for the container app, in the **Networking (1)** section, select **CORS (2)**.    
 

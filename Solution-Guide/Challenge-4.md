@@ -22,13 +22,13 @@ In this task, you will create an Azure Blob Storage account and then upload PDF 
 
    ```
    $CONTOSO_STORAGE_ACCOUNT_NAME="contososa$(Get-Random -Minimum 100000 -Maximum 999999)"
-   az storage account create --name $CONTOSO_STORAGE_ACCOUNT_NAME --resource-group Appmod --location $AZURE_REGION --sku Standard_LRS
+   az storage account create --name $CONTOSO_STORAGE_ACCOUNT_NAME --resource-group ODL-app-hack-xxxxxxx-Appmod --location $AZURE_REGION --sku Standard_LRS
    az storage container create --name brochures --account-name $CONTOSO_STORAGE_ACCOUNT_NAME
    ```
 
     ![](../media/h123.png)
 
-1. On the Azure home page, select **Resource groups** and then select **Appmod**. 
+1. On the Azure home page, select **Resource groups** and then select **ODL-app-hack-xxxxxxx-Appmod**. 
 
 1.  Locate the row for the created **Storage account.** *Copy and paste the **Storage account** name into Notepad*. You will need the name in an upcoming task.
 
@@ -54,14 +54,14 @@ In this task, you will create an Azure Blob Storage account and then upload PDF 
 
    ```
    $CONTOSO_SEARCH_SERVICE_NAME="contososrch$(Get-Random -Minimum 100000 -Maximum 999999)"
-   az search service create --name $CONTOSO_SEARCH_SERVICE_NAME --resource-group Appmod --sku Basic --location $AZURE_REGION  --auth-options aadOrApiKey --aad-auth-failure-mode http403 --identity-type SystemAssigned
+   az search service create --name $CONTOSO_SEARCH_SERVICE_NAME --resource-group ODL-app-hack-xxxxxxx-Appmod --sku Basic --location $AZURE_REGION  --auth-options aadOrApiKey --aad-auth-failure-mode http403 --identity-type SystemAssigned
    ```
 
     ![](../media/h127.png)   
 
      >**Note:** It may take 10-15 minutes for provisioning to complete.
 
-1. On the Azure home page, select **Resource groups** and then select **Appmod**. 
+1. On the Azure home page, select **Resource groups** and then select **ODL-app-hack-xxxxxxx-Appmod**. 
 
 1. Copy and paste the name of the **Search Service instance** you created previously into Notepad from the list of resources. You will need the name in an upcoming task.
 
@@ -72,7 +72,7 @@ In this task, you will create an Azure Blob Storage account and then upload PDF 
 
 In this task, you will create a set of managed identities so that the various Azure resources you created can communicate with each other.
 
-1. On the Azure home page, select **Resource groups** and then select **Appmod**.
+1. On the Azure home page, select **Resource groups** and then select **ODL-app-hack-xxxxxxx-Appmod**.
 
 1. In the list of services, select the **Azure AI Search instance** you created.
 
@@ -84,7 +84,7 @@ In this task, you will create a set of managed identities so that the various Az
 
 1. If prompted, select **Yes** to confirm the change.
 
-1. On the Azure home page, select **Resource groups** and then select **Appmod**.
+1. On the Azure home page, select **Resource groups** and then select **ODL-app-hack-xxxxxxx-Appmod**.
 
 1. In the list of services, select the **Azure OpenAI resource** you created.
 
@@ -113,9 +113,9 @@ In this task, you will create a set of managed identities so that the various Az
 1. Enter the following commands at the Terminal window prompt and press **Enter** after the last command. These commands allow *Azure Search and Azure OpenAI instances to access the Azure Blob Storage account.*    
 
    ```
-   $SEARCH_IDENTITY=$(az search service show --name $CONTOSO_SEARCH_SERVICE_NAME --resource-group Appmod --query identity.principalId -o tsv)
-   $AI_IDENTITY=$(az cognitiveservices account identity show --name $CONTOSO_OPENAI_NAME --resource-group Appmod --query principalId -o tsv)
-   $STORAGE_SCOPE=$(az storage account show --name $CONTOSO_STORAGE_ACCOUNT_NAME --resource-group Appmod --query id -o tsv)
+   $SEARCH_IDENTITY=$(az search service show --name $CONTOSO_SEARCH_SERVICE_NAME --resource-group ODL-app-hack-xxxxxxx-Appmod --query identity.principalId -o tsv)
+   $AI_IDENTITY=$(az cognitiveservices account identity show --name $CONTOSO_OPENAI_NAME --resource-group ODL-app-hack-xxxxxxx-Appmod --query principalId -o tsv)
+   $STORAGE_SCOPE=$(az storage account show --name $CONTOSO_STORAGE_ACCOUNT_NAME --resource-group ODL-app-hack-xxxxxxx-Appmod --query id -o tsv)
    az role assignment create --role "Storage Blob Data Contributor" --assignee $SEARCH_IDENTITY --scope $STORAGE_SCOPE
    az role assignment create --role "Storage Blob Data Contributor" --assignee $AI_IDENTITY --scope $STORAGE_SCOPE
    ```
@@ -125,7 +125,7 @@ In this task, you will create a set of managed identities so that the various Az
 1. Enter the following commands at the Terminal window prompt and press **Enter** after the last command. These commands allow *Azure Search to access the Azure OpenAI Service instance you created*.
 
    ```
-   $AI_SCOPE=$(az cognitiveservices account show --name $CONTOSO_OPENAI_NAME --resource-group Appmod --query id -o tsv)
+   $AI_SCOPE=$(az cognitiveservices account show --name $CONTOSO_OPENAI_NAME --resource-group ODL-app-hack-xxxxxxx-Appmod --query id -o tsv)
    az role assignment create --role "Cognitive Services OpenAI Contributor" --assignee $SEARCH_IDENTITY --scope $AI_SCOPE
    ```
 
@@ -134,7 +134,7 @@ In this task, you will create a set of managed identities so that the various Az
 1. Enter the following commands at the Terminal window prompt and press **Enter** after the last command. These commands allow the *Azure OpenAI Service instance to access the Azure Search Service instance you created*.    
 
    ```
-   $SEARCH_SCOPE=$(az search service show --name $CONTOSO_SEARCH_SERVICE_NAME --resource-group Appmod --query id -o tsv)
+   $SEARCH_SCOPE=$(az search service show --name $CONTOSO_SEARCH_SERVICE_NAME --resource-group ODL-app-hack-xxxxxxx-Appmod --query id -o tsv)
    az role assignment create --role "Search Index Data Contributor" --assignee $AI_IDENTITY --scope $SEARCH_SCOPE
    az role assignment create --role "Search Index Data Reader" --assignee $AI_IDENTITY --scope $SEARCH_SCOPE
    az role assignment create --role "Search Service Contributor" --assignee $AI_IDENTITY --scope $SEARCH_SCOPE
@@ -150,7 +150,7 @@ In this task, you will use Azure AI Search to import and vectorize data from the
 
 1. Navigate to the **Azure portal**.
 
-1. On the Azure home page, select **Resource groups** and then select **Appmod**.
+1. On the Azure home page, select **Resource groups** and then select **ODL-app-hack-xxxxxxx-Appmod**.
 
 1. In the list of resources that displays, select the **Azure AI Search service instance** from the list of resources.
 

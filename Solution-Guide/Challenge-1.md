@@ -45,9 +45,33 @@ Your task is to deploy the Azure OpenAI Service and Large Language Models (LLMs)
 
       ![](../media/h14.png)
 
-1. When the **Action Required** window pops up, click on **Ask Later**.
+1. On the **Let's keep your account secure** window, click **Next**.
 
-    ![](../media/h15.png)
+   ![MFA](../media/MFA-0.png)
+
+1. In the **Start by getting the app** window, download and install the **Microsoft Authenticator** app on your mobile device, then select **Next** to continue.
+
+   ![MFA](../media/MFA-1.png)
+
+1. In the **Set up yur account** window, click **Next**.
+
+   ![MFA](../media/MFA-2.png)
+
+1. On **Scan the QR code** window, scan the code from the **Microsoft Authenticator app** on your device, then click on **Next**.
+
+   ![MFA](../media/MFA-3.png)
+
+1. In your **Microsoft Authenticator app** notification, enter the number displayed on your screen to complete authentication.
+
+   ![MFA](../media/MFA-4.png)
+
+1. Click **Next**, once your notification is approved.
+
+   ![MFA](../media/MFA-5.png)
+
+1. Click **Done** to complete the process.
+
+   ![MFA](../media/MFA-6.png)
    
 1. If you see the pop-up **Stay Signed in?**, click **No**.
 
@@ -71,31 +95,31 @@ Your task is to deploy the Azure OpenAI Service and Large Language Models (LLMs)
 
 In this task, you will learn how to set up and deploy the Azure OpenAI service within the Azure Portal.
 
-1. On the Azure Portal page, in the Search resources, services, and docs (G+/) box at the top of the portal, enter **Azure OpenAI (1)**, and then select **Azure OpenAI (2)** under **Services**.
+1. On the Azure Portal page, in the Search resources, services, and docs (G+/) box at the top of the portal, enter **Azure Open AI (1)**, and then select **Azure OpenAI (2)** under **Services**.
 
-    ![](../media/h17.png)
+    ![](../media/Ch-1.png)
 
 1. On the **AI Foundry | Azure OpenAI** blade, click on **+ Create**.
 
-   ![](../media/C1.task1.1.png)
+   ![](../media/Ch-2.png)
 
 1. Specify the following details to deploy the Azure OpenAI service and click **Next (6)** thrice.
 
    | **Option**         | **Value**                                              |
    | ------------------ | -----------------------------------------------------  |
    | Subscription       | **Leave default subscription (1)**                                          |
-   | Resource Group     | Select **Appmod (2)**                 |
+   | Resource Group     | Select **ODL-app-hack-xxxxxxx-Appmod (2)**                 |
    | Region             | Use the same location as the resource group **(3)**            |
-   | Name               | Use the format **OpenAI-xxxxxx (4)** (replace **xxxxxx** with the **Deployment ID**) |
+   | Name               | Use the format **OpenAI-xxxxxx (4)** (replace **xxxxxxx** with the **Deployment ID**) |
    | Pricing tier       | **Standard S0 (5)**                                        | 
 
    >**Note**: Here, xxxxxx refers to the **deployment ID** which you recorded in the last task.
 
-    ![](../media/h10.png)
+    ![](../media/Ch-3.png)
 
 1. Once validation is successful on the **Review + submit** tab, click **Create** and wait for the deployment to complete.
 
-     ![](../media/h19.png)  
+     ![](../media/Ch-4.png)  
 
 
 ### Task 2: Deploy a Model
@@ -104,55 +128,55 @@ Azure OpenAI provides a web-based portal named Azure OpenAI Studio that you can 
 
 1. On the Azure Portal page, in the Search resources, services, and docs (G+/) box at the top of the portal, enter **Azure OpenAI (1)**, and then select **Azure OpenAI (2)** under **Services**.
 
-   ![](../media/h16.png)
+   ![](../media/Ch-1.png)
 
 1. On the **AI Foundry | Azure OpenAI** blade, select **OpenAI-xxxxxx (2)**.
 
-    ![](../media/c1.task2.1.png)
+    ![](../media/Ch-15.png)
 
 1. In the Azure OpenAI resource pane, select **Overview (1)** from the left-hand menu, then click on **Go to Azure AI Foundry portal (2)**. This will navigate you to Azure AI Studio.
 
-   ![](../media/c1.task2.2.png)
+   ![](../media/Ch-5.png)
 
    >**Note:** If the pop up "Discover an even better Azure AI Studio experience" appears, click close to dismiss it.
 
 1. Click on **Deployments (1)** under **Shared Resources**, then select the **+ Deploy Model (2)** drop-down. Next, choose **Deploy Base Model (3)**.
 
-    ![](../media/c1.task2.3.png)
+    ![](../media/Ch-6.png)
 
 1. Search for **GPT-4o (1),** then select **GPT-4o (2)** and click on **Confirm (3)**.
 
-    ![](../media/h3.png)
+    ![](../media/Ch-8.png)
 
 1. Within the **"Deploy model"** pop-up interface, click on **Customize**.
 
-    ![](../media/c1.task2.4.png)
+    ![](../media/Ch-9.png)
 
-1. On the **Deploy gpt-4o,** enter the following details:
+1. On the **Deploy model gpt-4o,** enter the following details:
 
-    - Deployment name: **gpt-4o (1)**
+    - Deployment name: **text-turbo (1)**
     - Deployment type: **Standard (2)**
     - Model version upgrade policy: **Upgrade once new default version becomes available (3)**
-    - Model version: **select the default (4)**
+    - Model version: **select the latest version (4)** from the dropdowm list.
     - Tokens per Minute Rate Limit (thousands): **20K (5)**
     - Enable dynamic quota: **Enabled (6)**
     - Click on **Deploy (7)**
         
-      ![](../media/c1.task2.5.png)
+      ![](../media/Ch-10.png)
 
       >**Note:** If the **Customize** option doesn't appear, you can directly enter the model deployment details. 
 
 1. Back on the **Deployments (1)** page, select **+ Deploy Model**. Next, choose **Deploy Base Model (2)**.
 
-     ![](../media/c1.task2.6.png)
+     ![](../media/Ch-16.png)
 
-1. Search for **text-embedding-ada-002**, then select **text-embedding-ada-002 (1)** and click **Confirm (2)**.
+1. Search for **text-embedding-ada-002 (1)**, then select **text-embedding-ada-002 (2)** and click **Confirm (3)**.
 
-     ![](../media/c1.task2.7.png)
+     ![](../media/Ch-11.png)
 
-1. Within the **"Deploy model"** pop up interface, click on **Customize**.
+1. Within the **Deployment details** section, click on **Customize**.
 
-     ![](../media/c1.task2.8.png)
+     ![](../media/Ch-12.png)
 
 1. On the **Deploy model text-embedding-ada-002** page, enter the following details:
 
@@ -163,7 +187,7 @@ Azure OpenAI provides a web-based portal named Azure OpenAI Studio that you can 
     - Enable dynamic quota: **Enabled (5)**
     - Click on **Deploy (6)**
         
-      ![](../media/h8.png)
+      ![](../media/Ch-13.png)
 
       >**Note:** If the **Customize** option doesn't appear, you can directly enter the model deployment details. 
 

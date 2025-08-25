@@ -245,7 +245,7 @@ In this task, you will prepare the flow for deployment and deploy the flow. You 
 
     >**Note:** This command will take around 5 minutes to run completely.
 
-1. Configure and update the following variables based on your previous configurations and select **Enter**.  `$CONTOSO_HOTEL_ENV` will be the name of your Container Apps Environment found in the **Appmod** Resource Group. The **_API_KEY**, **_ENDPOINT**, and **PGHOST** variable values can be found in the `.env` file from the last task.      
+1. Configure and update the following variables based on your previous configurations and select **Enter**.  `$CONTOSO_HOTEL_ENV` will be the name of your Container Apps Environment found in the **ODL-app-hack-xxxxxxx-Appmod** Resource Group. The **_API_KEY**, **_ENDPOINT**, and **PGHOST** variable values can be found in the `.env` file from the last task.      
 
    ```
    $CONTOSO_HOTEL_ENV = "contosoenvxxxxx"
@@ -258,14 +258,14 @@ In this task, you will prepare the flow for deployment and deploy the flow. You 
 
    ![](../media/h240.png)   
 
-    - `$CONTOSO_HOTEL_ENV` will be the name of your Container Apps Environment found in the **Appmod** Resource Group.
+    - `$CONTOSO_HOTEL_ENV` will be the name of your Container Apps Environment found in the **ODL-app-hack-xxxxxxx-Appmod** Resource Group.
 
       ![](../media/h239.png)     
 
 1. Enter the following to set the variables for values we have used previously and press **Enter** after the last command.        
 
    ```
-   $RG_NAME = "Appmod"
+   $RG_NAME = "ODL-app-hack-xxxxxxx-Appmod"
    $CONTOSO_ACR_CREDENTIAL = az acr credential show --name $ACR_NAME --query "passwords[0].value" -o tsv
    $PGUSER = "promptflow"
    $PGPASSWORD = "1234ABCD!"
@@ -293,7 +293,7 @@ In this task, you will prepare the flow for deployment and deploy the flow. You 
 
     >**Note:** Please copy and paste the **Prompflow URL** on a notepad.   
 
-1. You can also see the newly created **Chatbot** in the **Appmod** resource group.
+1. You can also see the newly created **Chatbot** in the **ODL-app-hack-xxxxxxx-Appmod** resource group.
 
    ![](../media/h243.png)  
 
@@ -304,7 +304,7 @@ In this task, you will prepare the flow for deployment and deploy the flow. You 
 1. Enter the following to pull and set the **$CONTOSO_BACKEND_URL** variable for use in the next step.   
 
    ```
-   $CONTOSO_BACKEND_URL = "https://$(az containerapp show --name "backend" --resource-group "Appmod" --query 'properties.configuration.ingress.fqdn' -o tsv)"
+   $CONTOSO_BACKEND_URL = "https://$(az containerapp show --name "backend" --resource-group "ODL-app-hack-xxxxxxx-Appmod" --query 'properties.configuration.ingress.fqdn' -o tsv)"
    ```
 
    ![](../media/h244.png)         
