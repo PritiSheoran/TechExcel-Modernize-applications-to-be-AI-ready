@@ -54,7 +54,7 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 
             ![](../media/Ch2-5.png)
 
-4. Under **Administrator account**, select the following details and click on **Next: Disks >** **(5)**
+4. Under **Administrator account**, select the following details and click on **Next: Disks >** **(5)**.
 
     - **Authentication type**: Select Password **(1)**
     - **Username**: Provide a Username for VM **(2)**

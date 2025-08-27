@@ -1,6 +1,6 @@
 # Application Modernization - Solution Guide
 
-<p align="right">May 26, 2025</p>
+<p align="right">August 26, 2025</p>
 
 # Challenge 01: Deploy Azure OpenAI Service and LLM Models
 ### Estimated Time: 30 Minutes
