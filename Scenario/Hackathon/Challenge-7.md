@@ -21,59 +21,7 @@ Riva ASR supports mono, 16-bit audio in WAV, OPUS, and FLAC formats. If you do n
 
 1. **Generate NGC API KEY**
 
-   - Log in or create an Nvidia account 
-
-   - Navigate to https://build.nvidia.com/ and log in using your personal email ID. If not, create an account.
-
-   - Complete account verification to gain API access. Once verified, your rate limit will increase to 40 requests per minute (RPM).
-
-      ![](media/nvaie-7-1.png) 
-   
-   -  Navigate to [Nvidia](https://ngc.nvidia.com/signin) account using your credentials to proceed and Click on the **Continue**.
-
-   - Once your account is created or you've successfully logged in.
-
-   - If you see a warning like **Update Email Preferences**, you can simply click **Close**, or navigate to **Go to Account Settings** to configure email notifications for your product services for this organization.
-
-      ![](../../media/c2.task1.4.png)
-
-   - In the search bar, look for **Riva ASR NIM**.
-
-   - Scroll down and select **Riva ASR NIM**. 
-
-     ![](../../media/nv6.png)
-
-   - On the left side, click **Get Container**.
-
-      ![](media/nv5.png)
-
-   - A pop-up will appear on the **Approval Required** page. Click on **Request Access** for the **NVIDIA AI Enterprise Essentials**, which will redirect you to the NVIDIA Developer Portal.
-
-      ![](../../media/nv4.png)
-
-   - On the **NVIDIA Developer Portal**, under **Integrate NIM into your application**, provide the necessary details and click **Join**.
-
-      ![](../../media/nv3.png)
-
-   - Navigate back to your **NVIDIA Account**. From **Organization**, click **Subscriptions** on the left. Here, you will see the **Active** status of the NVIDIA AI Enterprise Essentials.
-
-      ![](../../media/nv2.png)
-
-   - Click on **Account** at the top of the page and navigate to the **Setup** section.
-
-      ![](../../media/nvidia4.png)
-
-   - Click on **Generate API Key** to create a new key to access the necessary services.
-
-      ![](../../media/genkey.png)
-
-   - From the top, click on **+ Generate Personal Key** to create a new API key.
-
-      ![](../../media/c1.task1.02.png)
-
-   - Generate Personal Key: Grant your key permission to access or download containers and artifacts from the NGC Catalog.
-
-   - Carefully copy your generated API key, essential for accessing various services and features. Paste the API key in the notebook. Store it securely, as it may not be displayed again after you leave the page.
+   -  Please [Click Here](https://nvdam.widen.net/s/tvgjgxrspd/create-build-account-and-api-key) and follow the instructions to generate an NVIDIA API Key.
 
 2. **Create and Connect to a GPU-Enabled Virtual Machine in Azure**
 

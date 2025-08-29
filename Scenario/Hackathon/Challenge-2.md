@@ -17,7 +17,7 @@ Here's a simple overview of each service used by the app:
 
 ## Challenge Objectives:
 
-> **Important**: When deploying services in this challenge, please make sure to use the resource group named **Appmod**. 
+> **Important**: When deploying services in this challenge, please make sure to use the resource group named **ODL-app-hack-xxxxxxx-Appmod**. 
 
 1. **Clone the Repository:**
    - Clone the repository within Visual Studio Code: `https://github.com/qxsch/ContosoHotel.git`.
@@ -30,7 +30,7 @@ Here's a simple overview of each service used by the app:
 
 3. **Create an Azure Container Registry (ACR) Instance and Push the App Container to ACR:**
 
-   - Create an ACR instance with a basic SKU within the **Appmod** resource group inside the **ContosoHotel** folder.
+   - Create an ACR instance with a basic SKU within the **ODL-app-hack-xxxxxxx-Appmod** resource group inside the **ContosoHotel** folder.
    - Sign in to ACR. Create a Docker tag for the app and then push the app container to ACR.
 
      <validation step="f093ed04-190b-4416-bd7a-59a113e42a4e" />   
@@ -44,7 +44,7 @@ Here's a simple overview of each service used by the app:
       .\iac\manageIac.ps1 -iacAction create -passwd "1234ABcd!" -deploy "postgresql" -rgname "$RG" -location "REPLACE_WITH_REGION_YOU_SELECTED_IN_CHALLENGE1"
       ```
 
-      > **Note**: Make sure to use the **Appmod** resource group.
+      > **Note**: Make sure to use the **ODL-app-hack-xxxxxxx-Appmod** resource group.
 
      <validation step="86139f4d-d94b-44f4-aef0-be0923be574f" />   
 

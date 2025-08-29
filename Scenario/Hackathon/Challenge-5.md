@@ -11,7 +11,7 @@ Here is a simple overview of each service used:
 
 ## Challenge Objectives:
 
-> **Important**: When deploying services in this challenge, please make sure to use the resource group named **Appmod** and use the same region as the resource group.
+> **Important**: When deploying services in this challenge, please make sure to use the resource group named **ODL-app-hack-xxxxxxx-Appmod** and use the same region as the resource group.
 
 1. **Create a PostgreSQL user and set up an AI Hub and Prompt Flow:**
 

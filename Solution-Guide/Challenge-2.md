@@ -224,7 +224,7 @@ In this task, you will create an Azure Container Registry (ACR) instance to stor
 1. Enter the following command at the Terminal window prompt and then press **Enter**. This command creates an ACR instance.    
 
    ```
-   az acr create --resource-group "Appmod" --name "$ACR_NAME" --sku Basic --admin-enabled true
+   az acr create --resource-group "ODL-app-hack-xxxxxxx-Appmod" --name "$ACR_NAME" --sku Basic --admin-enabled true
    ```
 
     ![](../media/h53.png)  
@@ -307,7 +307,7 @@ The Contoso Hotel legacy app stores data in a PostgreSQL database.
 1. Enter the following command, replace the text `REPLACE_WITH_REGION_YOU_SELECTED_IN_CHALLENGE01_TASK01` with the Azure region location that you have used earlier in Challenge 1, and then press **Enter**. This command deploys a PostgreSQL server instance.
 
    ```
-   .\iac\manageIac.ps1 -iacAction create -passwd "1234ABcd!" -deploy "postgresql" -rgname "Appmod" -location "REPLACE_WITH_REGION_YOU_SELECTED_IN_CHALLENGE1_TASK01"
+   .\iac\manageIac.ps1 -iacAction create -passwd "1234ABcd!" -deploy "postgresql" -rgname "ODL-app-hack-xxxxxxx-Appmod" -location "REPLACE_WITH_REGION_YOU_SELECTED_IN_CHALLENGE1_TASK01"
    ```
 
     ![](../media/h59.png) 
