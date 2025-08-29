@@ -41,15 +41,15 @@ If you have not already cloned the **ContosoHotel** code repository to the envir
 
     - From the top left corner menu, select **File (1)** >  **Open Folder (2)**.
 
-       ![](../media/h73.png)
+       ![](../media/Ch3-0.png)
       
     - Within the file explorer in **Quick access,** select **ContosoHotel (1),** then click on **Select folder (2)**.
 
-       ![](../media/h26.png)
+       ![](../media/Ch3-1.png)
       
     - If **Do you trust the authors of the files in this folder?** option is prompted, click on **Yes, I trust the authors**.
 
-         ![](../media/h27.png)
+         ![](../media/Ch3-2.png)
 
        > **Note**: If you are prompted to add required assets to build and debug, select **Not Now**.
 
@@ -82,7 +82,7 @@ In this task, you will create the Docker container and add app components to the
 
 1. Wait for the app to start. After the app starts, wait for the app to start Docker Engine.
 
-   ![](../media/h32.png)
+   ![](../media/Ch3-11.png)
 
 1. After the Docker Engine starts, the Docker UI should resemble the following screenshot. Docker will display any running containers.
 
@@ -92,13 +92,43 @@ In this task, you will create the Docker container and add app components to the
 
 1. Navigate back to the Visual Studio Terminal. If closed, from the top left menu, select the **(...) (1)** ellipses > **Terminal (2)**, then choose **New Terminal (3)**.    
 
-   ![](../media/h34.png)
+   ![](../media/Ch3-12.png)
 
 1. In the terminal, run the below command to navigate back to the root directory **(1)**.
 
    ```
    cd ..
    ```
+1. Enter the following command **(2)** and press **Enter**. This command allows you to run commands as an administrator.
+
+   ```
+   Start-Process powershell -Verb runAs
+   ```
+
+   ![](../media/Ch3-18.png)
+
+1. Enter the following command in the PowerShell prompt and then press **Enter.** This command configures the Docker daemon to start automatically.
+
+   ```
+   Set-Service -Name com.docker.service -StartupType Automatic
+   ```
+   ![](../media/Ch3-13.png)
+
+1. Enter the following command at the PowerShell prompt and then press Enter. This command manually starts the Docker daemon.
+
+   ```
+   Start-Service -Name com.docker.service
+   ```
+   ![](../media/Ch3-14.png)
+
+1. Enter the following command at the PowerShell prompt and then press Enter. This command checks the status of the Docker daemon. Verify that the results show the Docker daemon is running.
+
+   ```
+   Get-Service -Name com.docker.service
+   ```
+   ![](../media/Ch3-15.png)
+
+1. Minimize the PowerShell window. Return to Visual Studio Code.
 
 1. Enter the below command to navigate back to the **ContosoHotel** folder where the cloned repository resides.
 
@@ -194,7 +224,7 @@ In this task, you will create an Azure Container Registry (ACR) instance to stor
 1. Enter the following command at the Terminal window prompt and then press **Enter**. This command creates an ACR instance.    
 
    ```
-   az acr create --resource-group "Appmod" --name "$ACR_NAME" --sku Basic --admin-enabled true
+   az acr create --resource-group "ODL-app-hack-xxxxxxx-Appmod" --name "$ACR_NAME" --sku Basic --admin-enabled true
    ```
 
     ![](../media/h53.png)  
@@ -277,7 +307,7 @@ The Contoso Hotel legacy app stores data in a PostgreSQL database.
 1. Enter the following command, replace the text `REPLACE_WITH_REGION_YOU_SELECTED_IN_CHALLENGE01_TASK01` with the Azure region location that you have used earlier in Challenge 1, and then press **Enter**. This command deploys a PostgreSQL server instance.
 
    ```
-   .\iac\manageIac.ps1 -iacAction create -passwd "1234ABcd!" -deploy "postgresql" -rgname "Appmod" -location "REPLACE_WITH_REGION_YOU_SELECTED_IN_CHALLENGE1_TASK01"
+   .\iac\manageIac.ps1 -iacAction create -passwd "1234ABcd!" -deploy "postgresql" -rgname "ODL-app-hack-xxxxxxx-Appmod" -location "REPLACE_WITH_REGION_YOU_SELECTED_IN_CHALLENGE1_TASK01"
    ```
 
     ![](../media/h59.png) 

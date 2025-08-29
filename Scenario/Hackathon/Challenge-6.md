@@ -6,7 +6,7 @@ At this point, you have a chatbot that can query the hotel brochures. In this ch
 
 ## Challenge Objectives:
 
-> **Important**: When deploying services in this challenge, please make sure to use the resource group named **Appmod** and use the same region as the resource group.
+> **Important**: When deploying services in this challenge, please make sure to use the resource group named **ODL-app-hack-xxxxxxx-Appmod** and use the same region as the resource group.
 
 1. **Set up Visual Studio Code and Run the Flow Locally:**
 

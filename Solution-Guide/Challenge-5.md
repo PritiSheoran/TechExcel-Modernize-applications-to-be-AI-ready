@@ -80,7 +80,7 @@ In this task, you will create a hub and then create a project within the hub. Yo
 1. On the **Create an AI hub resource** pane enter the following details:
 
     - Subscription : **Leave default subscription** 
-    - Resource Group : Select **Appmod (1)** 
+    - Resource Group : Select **ODL-app-hack-xxxxxxx-Appmod (1)** 
     - Region : Use the same location as the resource group **(2)**
     - Name : Use the format **aihub-xxxxxx (3)** (replace **xxxxxx** with the **Deployment ID**) 
 
@@ -105,7 +105,7 @@ In this task, you will create a hub and then create a project within the hub. Yo
 
 1. Wait for the AI Hub deployment to complete.
 
-1. On the Azure home page, select **Resource groups** and then select **Appmod**.
+1. On the Azure home page, select **Resource groups** and then select **ODL-app-hack-xxxxxxx-Appmod**.
 
 1. You should see two storage accounts. The first is the storage account that you created earlier in the lab. *The other was created by the AI Hub. Select the storage account that was created by AI Hub*.
 
@@ -204,7 +204,7 @@ In this task, you will import a pre-built flow, configure flow settings, and the
 
 1. Navigate back to the **Azure portal.**
 
-1. On the Azure home page, select **Resource groups** and then select **Appmod**.
+1. On the Azure home page, select **Resource groups** and then select **ODL-app-hack-xxxxxxx-Appmod**.
 
 1. Select the PostgreSQL database that you created in a previous challenge.
 
@@ -651,14 +651,14 @@ In this task, you will import a pre-built flow, configure flow settings, and the
    ```
    $chatapp = "chatapp$(Get-Random -Minimum 100000 -Maximum 999999)"
 
-   az containerapp create --name "$chatapp" --resource-group "Appmod" --environment "$CONTOSO_HOTEL_ENV" --image "$ACR_NAME.azurecr.io/chatapp:v1.0.0" --target-port 5000 --ingress external --transport http --registry-server "$ACR_NAME.azurecr.io" --registry-username "$ACR_NAME" --registry-password "$CONTOSO_ACR_CREDENTIAL"
-   $CONTOSO_CHAT_URL = "https://$(az containerapp show --name "$chatapp" --resource-group "Appmod" --query 'properties.configuration.ingress.fqdn' -o tsv)"
+   az containerapp create --name "$chatapp" --resource-group "ODL-app-hack-xxxxxxx-Appmod" --environment "$CONTOSO_HOTEL_ENV" --image "$ACR_NAME.azurecr.io/chatapp:v1.0.0" --target-port 5000 --ingress external --transport http --registry-server "$ACR_NAME.azurecr.io" --registry-username "$ACR_NAME" --registry-password "$CONTOSO_ACR_CREDENTIAL"
+   $CONTOSO_CHAT_URL = "https://$(az containerapp show --name "$chatapp" --resource-group "ODL-app-hack-xxxxxxx-Appmod" --query 'properties.configuration.ingress.fqdn' -o tsv)"
    Write-Host -ForegroundColor Green  "Chatapp URL is: $CONTOSO_CHAT_URL"
    ```
 
     >**Note:** If you encounter any error when creating the container app, first retrieve the Container Apps environment            name using the following command:
     ```
-    az containerapp env list --resource-group Appmod --query "[].name" -o tsv
+    az containerapp env list --resource-group ODL-app-hack-xxxxxxx-Appmod --query "[].name" -o tsv
     ```
     Assign it to the variable:
    ```
