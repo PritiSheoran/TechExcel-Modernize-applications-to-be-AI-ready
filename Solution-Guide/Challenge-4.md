@@ -32,7 +32,7 @@ In this task, you will create an Azure Blob Storage account and then upload PDF 
 
 1.  Locate the row for the created **Storage account.** *Copy and paste the **Storage account** name into Notepad*. You will need the name in an upcoming task.
 
-    ![](../media/h125.png)
+    ![](../media/Ch5-8.png)
 
 1. Navigate to Visual Studio Code, enter the following command at the Terminal window prompt, and press **Enter**. This command clones assets for this workshop, including hotel brochures from a GitHub repository, to a folder named **AssetsRepo**.
 
@@ -57,7 +57,7 @@ In this task, you will create an Azure Blob Storage account and then upload PDF 
    az search service create --name $CONTOSO_SEARCH_SERVICE_NAME --resource-group ODL-app-hack-xxxxxxx-Appmod --sku Basic --location $AZURE_REGION  --auth-options aadOrApiKey --aad-auth-failure-mode http403 --identity-type SystemAssigned
    ```
 
-    ![](../media/h127.png)   
+    ![](../media/Ch5-16.png)   
 
      >**Note:** It may take 10-15 minutes for provisioning to complete.
 
@@ -65,7 +65,7 @@ In this task, you will create an Azure Blob Storage account and then upload PDF 
 
 1. Copy and paste the name of the **Search Service instance** you created previously into Notepad from the list of resources. You will need the name in an upcoming task.
 
-    ![](../media/h128.png)
+    ![](../media/Ch5-26.png)
 
 
 ### Task 2: Configure Managed Identities for Deployed Azure Resources
@@ -76,7 +76,7 @@ In this task, you will create a set of managed identities so that the various Az
 
 1. In the list of services, select the **Azure AI Search instance** you created.
 
-    ![](../media/h128.png)
+    ![](../media/Ch5-26.png)
 
 1. From the left navigation pane, under the **Settings (1)** section, select **Identity (2)**. Verify that the value for the Status field on the System Assigned tab is **On (3)**.    
 
@@ -88,11 +88,11 @@ In this task, you will create a set of managed identities so that the various Az
 
 1. In the list of services, select the **Azure OpenAI resource** you created.
 
-    ![](../media/h130.png)
+    ![](../media/Ch5-19.png)
 
 1. From the left navigation pane, under the **Resource Management (1)** section, select **Identity (2)**. Set the value for the Status field on the System Assigned tab to **On (3)** and then click **Save (4)**. 
 
-    ![](../media/h131.png)
+    ![](../media/Ch5-20.png)
 
 1. If prompted, select **Yes** to confirm the change.
 
@@ -154,7 +154,7 @@ In this task, you will use Azure AI Search to import and vectorize data from the
 
 1. In the list of resources that displays, select the **Azure AI Search service instance** from the list of resources.
 
-    ![](../media/h137.png)
+    ![](../media/Ch5-26.png)
 
 1. On the Overview page for the Search service, select **Import and vectorize data**.    
 

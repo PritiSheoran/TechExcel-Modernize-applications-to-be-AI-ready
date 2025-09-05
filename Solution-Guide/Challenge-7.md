@@ -33,7 +33,7 @@ Looking at your document, Task 2 needs a proper title to match the formatting of
 3. In the Create a virtual machine, enter the following details:
 
     - **Subscription**: Select available Subscription **(1).**
-    - **Resource group**: Select **Appmod (2)**.
+    - **Resource group**: Select **ODL-app-hack-xxxxxxx-Appmod (2)**.
     - **Virtual machine name**: Provide a unique Virtual machine name (e.g. nvidia-gpu) **(3)**
     - **Region**: East US **(4)**
     - **Availability options**: from the drop-down, select **no infrastructure redundancy required (5)**

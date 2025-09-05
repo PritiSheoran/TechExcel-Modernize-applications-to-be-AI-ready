@@ -26,7 +26,7 @@ If you have not already cloned the **ContosoHotel** code repository to the envir
 
    ![](../media/hack1.jpg)
 
-1. In **Visual Studio Code**, from the top left menu, select the **(...) (1)** ellipses > **Terminal (2)**, then choose **New Terminal (3)**.
+1. In **Visual Studio Code**, from the top left menu, select the **ellipsis (...) (1)** ellipses > **Terminal (2)**, then choose **New Terminal (3)**.
 
    ![](../media/h72.png)
 
@@ -39,11 +39,11 @@ If you have not already cloned the **ContosoHotel** code repository to the envir
 
 1. When the repository has been cloned, open the folder in Visual Studio Code by following these steps:
 
-    - From the top left corner menu, select **File (1)** >  **Open Folder (2)**.
+    - From the top left corner menu, select **File (1)** >  **Open Folder... (2)**.
 
        ![](../media/Ch3-0.png)
       
-    - Within the file explorer in **Quick access,** select **ContosoHotel (1),** then click on **Select folder (2)**.
+    - Within the file explorer in **Quick access,** select **ContosoHotel (1),** then click on **Select Folder (2)**.
 
        ![](../media/Ch3-1.png)
       
@@ -90,7 +90,7 @@ In this task, you will create the Docker container and add app components to the
 
     >**Note**: Minimize the Docker Desktop, but don’t close the app.
 
-1. Navigate back to the Visual Studio Terminal. If closed, from the top left menu, select the **(...) (1)** ellipses > **Terminal (2)**, then choose **New Terminal (3)**.    
+1. Navigate back to the Visual Studio Terminal. If closed, from the top left menu, select the **ellipsis (...) (1)** ellipses > **Terminal (2)**, then choose **New Terminal (3)**.    
 
    ![](../media/Ch3-12.png)
 
@@ -138,7 +138,7 @@ In this task, you will create the Docker container and add app components to the
 
     ![](../media/h40.png)   
 
-1. From the top left corner menu, select **File (1)** >  **Open File (2)**.
+1. From the top left corner menu, select **File (1)** >  **Open File... (2)**.
 
    ![](../media/h41.png)
 
@@ -310,13 +310,13 @@ The Contoso Hotel legacy app stores data in a PostgreSQL database.
    .\iac\manageIac.ps1 -iacAction create -passwd "1234ABcd!" -deploy "postgresql" -rgname "ODL-app-hack-xxxxxxx-Appmod" -location "REPLACE_WITH_REGION_YOU_SELECTED_IN_CHALLENGE1_TASK01"
    ```
 
-    ![](../media/h59.png) 
+    ![](../media/Ch3-17.png) 
 
      >**Note:** The script first checks for common errors and then provisions the database. It may take 6-10 minutes to deploy the PostgreSQL server instance. You may see several warnings displayed during deployment.
 
 1. When the deployment is complete, the Terminal window will display a message in a **green** font showing the database's connection string. **Copy and paste the string into Notepad**.
 
-   ![](../media/h59.png)
+    ![](../media/Ch3-20.png)
 
     >**Note:** If you do not see a message after 10 minutes stating that the PostgreSQL server and database are deployed successfully, go to the Azure portal and select your resource group. Look for a PostgreSQL server and database in the list of resources. Check the Overview section of the resource group to see if there are deployments in progress. Notify your coach about any issues.
 

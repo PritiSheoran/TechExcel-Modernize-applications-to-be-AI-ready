@@ -12,7 +12,7 @@ In this task, you will manually separate frontend and backend components into se
 
 1. Open Visual Studio Code.
 
-1. From the top left menu, select the **(...) (1)** ellipses > **Terminal (2)**, then choose **New Terminal (3)**.
+1. From the top left menu, select the **ellipsis (...) (1)** ellipses > **Terminal (2)**, then choose **New Terminal (3)**.
 
    ![](../media/h72.png)
 
@@ -35,7 +35,7 @@ In this task, you will manually separate frontend and backend components into se
    ```
     ![](../media/h78.png)    
 
-1. From the top left corner menu, select **File (1)** >  **Open Folder (2)**.
+1. From the top left corner menu, select **File (1)** >  **Open Folder... (2)**.
 
    ![](../media/h73.png)
 

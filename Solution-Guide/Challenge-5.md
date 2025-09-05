@@ -17,9 +17,9 @@ In this task, you will create a hub and then create a project within the hub. Yo
 
 1. On the Azure home page, select the **PostgreSQL database** that you created in a previous challenge.
 
-    ![](../media/h150.png)
+    ![](../media/Ch6-0.png)
 
-1. Copy and paste the **Enpoint** that appears in the **Overview** section of your database server into Notepad.
+1. Copy and paste the **Endpoint** that appears in the **Overview** section of your database server into Notepad.
 
     ![](../media/c6.task1.1.png)
 
