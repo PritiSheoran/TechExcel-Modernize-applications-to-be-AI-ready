@@ -8,7 +8,7 @@
 
 Welcome to the Deploy Azure OpenAI Service challenge! This challenge is designed to test your skills in deploying the Azure OpenAI Service and its Large Language Models (LLM). The goal is to set up the OpenAI Service and deploy LLM models.
 
-**Azure OpenAI Service** provides REST API access to OpenAI's powerful language models, including the GPT-4, GPT-4 Turbo with Vision, ` GPT-4o`, and Embeddings model series. In addition, the new `GPT-4` and ` GPT-4o` model series have now reached general availability.
+**Azure OpenAI Service** provides REST API access to OpenAI's powerful language models, including the GPT-4, GPT-4 Turbo with Vision, `GPT-4o`, and Embeddings model series. In addition, the new `GPT-4` and ` GPT-4o` model series have now reached general availability.
 
 A **Large Language Model (LLM)** is a deep learning algorithm that can perform a variety of natural language processing (NLP) tasks. Large language models use transformer models and are trained using massive datasets—hence, large. This enables them to recognize, translate, predict, or generate text or other content.
 
@@ -26,7 +26,7 @@ Your task is to deploy the Azure OpenAI Service and Large Language Models (LLMs)
 
 >**Important**: You can find the username and password within the Environment by navigating to the **Environment** **(1)** tab in the left pane. Then copy the **Azure Username** **(2)** and **Azure Password** **(3)**, which will be required to sign into the Azure portal in later steps. Also, you can record the **Deployment ID** **(4)** to provide a unique name to the resources during deployment.
 
->**Note**: Numbers and ID values may vary, kindly ignore values in screenshots and copy values from **Environment** tab.
+>**Note**: Numbers and ID values may vary, kindly ignore values in screenshots and copy values from the **Environment** tab.
 
  ![](../media/h11.png)
  ![](../media/h12.png)
@@ -138,7 +138,7 @@ Azure OpenAI provides a web-based portal named Azure OpenAI Studio that you can 
 
    ![](../media/Ch-5.png)
 
-   >**Note:** If the pop up "Discover an even better Azure AI Studio experience" appears, click close to dismiss it.
+   >**Note:** If the pop-up "Discover an even better Azure AI Studio experience" appears, click close to dismiss it.
 
 1. Click on **Deployments (1)** under **Shared Resources**, then select the **+ Deploy Model (2)** drop-down. Next, choose **Deploy Base Model (3)**.
 
@@ -157,7 +157,7 @@ Azure OpenAI provides a web-based portal named Azure OpenAI Studio that you can 
     - Deployment name: **text-turbo (1)**
     - Deployment type: **Standard (2)**
     - Model version upgrade policy: **Upgrade once new default version becomes available (3)**
-    - Model version: **select the latest version (4)** from the dropdowm list.
+    - Model version: **select the latest version (4)** from the dropdown list.
     - Tokens per Minute Rate Limit (thousands): **20K (5)**
     - Enable dynamic quota: **Enabled (6)**
     - Click on **Deploy (7)**
@@ -191,7 +191,7 @@ Azure OpenAI provides a web-based portal named Azure OpenAI Studio that you can 
 
       >**Note:** If the **Customize** option doesn't appear, you can directly enter the model deployment details. 
 
-1. Back on the **Model Deployments** page, you should be able to see the pre-created deployment models **gpt-4o** and **text-ada-002**.
+1. Back on the **Model Deployments** page, you should be able to see the pre-created deployment models `gpt-4o` and `text-ada-002`.
 
      ![](../media/c1.task2.9.png)
 
