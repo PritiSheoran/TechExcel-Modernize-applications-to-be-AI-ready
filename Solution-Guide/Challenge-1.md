@@ -1,6 +1,6 @@
-# Application Modernization - Solution Guide
+# Microsoft Azure Hackathon: Application Modernization Trainer Guide
 
-<p align="right">August 26, 2025</p>
+<p align="right">Last updated August 26, 2025</p>
 
 # Challenge 01: Deploy Azure OpenAI Service and LLM Models
 ### Estimated Time: 30 Minutes
